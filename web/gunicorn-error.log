@@ -1,0 +1,1988 @@
+[2017-06-15 00:29:20 -0700] [24606] [DEBUG] Current configuration:
+  proxy_protocol: False
+  worker_connections: 1000
+  statsd_host: None
+  max_requests_jitter: 0
+  post_fork: <function post_fork at 0x101b019b0>
+  errorlog: /Users/hkapoor/Desktop/DataAnalytics/sms/sms/logs/gunicorn-error.log
+  enable_stdio_inheritance: False
+  worker_class: sync
+  ssl_version: 2
+  suppress_ragged_eofs: True
+  syslog: False
+  syslog_facility: user
+  when_ready: <function when_ready at 0x101b016e0>
+  pre_fork: <function pre_fork at 0x101b01848>
+  cert_reqs: 0
+  preload_app: False
+  keepalive: 2
+  accesslog: /Users/hkapoor/Desktop/DataAnalytics/sms/sms/logs/gunicorn-access.log
+  group: 20
+  graceful_timeout: 30
+  do_handshake_on_connect: False
+  spew: False
+  workers: 1
+  proc_name: None
+  sendfile: None
+  pidfile: None
+  umask: 0
+  on_reload: <function on_reload at 0x101b01578>
+  pre_exec: <function pre_exec at 0x101b01f50>
+  worker_tmp_dir: None
+  limit_request_fields: 100
+  pythonpath: None
+  on_exit: <function on_exit at 0x101b067d0>
+  config: gunicorn.conf.py
+  logconfig: None
+  check_config: False
+  statsd_prefix: 
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  reload_engine: auto
+  proxy_allow_ips: ['127.0.0.1']
+  pre_request: <function pre_request at 0x101b06140>
+  post_request: <function post_request at 0x101b06230>
+  forwarded_allow_ips: ['127.0.0.1']
+  worker_int: <function worker_int at 0x101b01c80>
+  raw_paste_global_conf: []
+  threads: 1
+  max_requests: 0
+  chdir: /Users/hkapoor/Desktop/DataAnalytics/sms/sms
+  daemon: False
+  user: 501
+  limit_request_line: 4094
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  certfile: None
+  on_starting: <function on_starting at 0x101b01410>
+  post_worker_init: <function post_worker_init at 0x101b01b18>
+  child_exit: <function child_exit at 0x101b06398>
+  worker_exit: <function worker_exit at 0x101b06500>
+  paste: None
+  default_proc_name: wsgi.py
+  syslog_addr: unix:///var/run/syslog
+  syslog_prefix: None
+  ciphers: TLSv1
+  worker_abort: <function worker_abort at 0x101b01de8>
+  loglevel: debug
+  bind: ['127.0.0.1:9000']
+  raw_env: []
+  initgroups: False
+  capture_output: False
+  reload: False
+  limit_request_field_size: 8190
+  nworkers_changed: <function nworkers_changed at 0x101b06668>
+  timeout: 30
+  keyfile: None
+  ca_certs: None
+  tmp_upload_dir: None
+  backlog: 2048
+  logger_class: gunicorn.glogging.Logger
+[2017-06-15 00:29:20 -0700] [24606] [INFO] Starting gunicorn 19.7.1
+[2017-06-15 00:29:20 -0700] [24606] [DEBUG] Arbiter booted
+[2017-06-15 00:29:20 -0700] [24606] [INFO] Listening at: http://127.0.0.1:9000 (24606)
+[2017-06-15 00:29:20 -0700] [24606] [INFO] Using worker: sync
+[2017-06-15 00:29:20 -0700] [24609] [INFO] Booting worker with pid: 24609
+[2017-06-15 00:29:20 -0700] [24606] [DEBUG] 1 workers
+[2017-06-15 00:29:21 -0700] [24609] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/Users/hkapoor/Desktop/DataAnalytics/sms/sms/py27env/lib/python2.7/site-packages/gunicorn/arbiter.py", line 578, in spawn_worker
+    worker.init_process()
+  File "/Users/hkapoor/Desktop/DataAnalytics/sms/sms/py27env/lib/python2.7/site-packages/gunicorn/workers/base.py", line 126, in init_process
+    self.load_wsgi()
+  File "/Users/hkapoor/Desktop/DataAnalytics/sms/sms/py27env/lib/python2.7/site-packages/gunicorn/workers/base.py", line 135, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/Users/hkapoor/Desktop/DataAnalytics/sms/sms/py27env/lib/python2.7/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/Users/hkapoor/Desktop/DataAnalytics/sms/sms/py27env/lib/python2.7/site-packages/gunicorn/app/wsgiapp.py", line 65, in load
+    return self.load_wsgiapp()
+  File "/Users/hkapoor/Desktop/DataAnalytics/sms/sms/py27env/lib/python2.7/site-packages/gunicorn/app/wsgiapp.py", line 52, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/Users/hkapoor/Desktop/DataAnalytics/sms/sms/py27env/lib/python2.7/site-packages/gunicorn/util.py", line 356, in import_app
+    raise ImportError(msg % (module.rsplit(".", 1)[0], obj))
+ImportError: Failed to find application, did you mean 'wsgi:application'?
+[2017-06-15 00:29:21 -0700] [24609] [INFO] Worker exiting (pid: 24609)
+[2017-06-15 00:29:21 -0700] [24606] [INFO] Shutting down: Master
+[2017-06-15 00:29:21 -0700] [24606] [INFO] Reason: Worker failed to boot.
+[2017-06-15 00:30:01 -0700] [24620] [DEBUG] Current configuration:
+  proxy_protocol: False
+  worker_connections: 1000
+  statsd_host: None
+  max_requests_jitter: 0
+  post_fork: <function post_fork at 0x106ea6b90>
+  errorlog: /Users/hkapoor/Desktop/DataAnalytics/sms/sms/logs/gunicorn-error.log
+  enable_stdio_inheritance: False
+  worker_class: sync
+  ssl_version: 2
+  suppress_ragged_eofs: True
+  syslog: False
+  syslog_facility: user
+  when_ready: <function when_ready at 0x106ea68c0>
+  pre_fork: <function pre_fork at 0x106ea6a28>
+  cert_reqs: 0
+  preload_app: False
+  keepalive: 2
+  accesslog: /Users/hkapoor/Desktop/DataAnalytics/sms/sms/logs/gunicorn-access.log
+  group: 20
+  graceful_timeout: 30
+  do_handshake_on_connect: False
+  spew: False
+  workers: 1
+  proc_name: None
+  sendfile: None
+  pidfile: None
+  umask: 0
+  on_reload: <function on_reload at 0x106ea6758>
+  pre_exec: <function pre_exec at 0x106ead1b8>
+  worker_tmp_dir: None
+  limit_request_fields: 100
+  pythonpath: None
+  on_exit: <function on_exit at 0x106ead9b0>
+  config: None
+  logconfig: None
+  check_config: False
+  statsd_prefix: 
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  reload_engine: auto
+  proxy_allow_ips: ['127.0.0.1']
+  pre_request: <function pre_request at 0x106ead320>
+  post_request: <function post_request at 0x106ead410>
+  forwarded_allow_ips: ['127.0.0.1']
+  worker_int: <function worker_int at 0x106ea6e60>
+  raw_paste_global_conf: []
+  threads: 1
+  max_requests: 0
+  chdir: /Users/hkapoor/Desktop/DataAnalytics/sms/sms
+  daemon: False
+  user: 501
+  limit_request_line: 4094
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  certfile: None
+  on_starting: <function on_starting at 0x106ea65f0>
+  post_worker_init: <function post_worker_init at 0x106ea6cf8>
+  child_exit: <function child_exit at 0x106ead578>
+  worker_exit: <function worker_exit at 0x106ead6e0>
+  paste: None
+  default_proc_name: wsgi.py
+  syslog_addr: unix:///var/run/syslog
+  syslog_prefix: None
+  ciphers: TLSv1
+  worker_abort: <function worker_abort at 0x106ead050>
+  loglevel: debug
+  bind: ['127.0.0.1:9000']
+  raw_env: []
+  initgroups: False
+  capture_output: False
+  reload: False
+  limit_request_field_size: 8190
+  nworkers_changed: <function nworkers_changed at 0x106ead848>
+  timeout: 30
+  keyfile: None
+  ca_certs: None
+  tmp_upload_dir: None
+  backlog: 2048
+  logger_class: gunicorn.glogging.Logger
+[2017-06-15 00:30:01 -0700] [24620] [INFO] Starting gunicorn 19.7.1
+[2017-06-15 00:30:01 -0700] [24620] [DEBUG] Arbiter booted
+[2017-06-15 00:30:01 -0700] [24620] [INFO] Listening at: http://127.0.0.1:9000 (24620)
+[2017-06-15 00:30:01 -0700] [24620] [INFO] Using worker: sync
+[2017-06-15 00:30:01 -0700] [24623] [INFO] Booting worker with pid: 24623
+[2017-06-15 00:30:01 -0700] [24620] [DEBUG] 1 workers
+[2017-06-15 00:30:01 -0700] [24623] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/gunicorn/arbiter.py", line 578, in spawn_worker
+    worker.init_process()
+  File "/Library/Python/2.7/site-packages/gunicorn/workers/base.py", line 126, in init_process
+    self.load_wsgi()
+  File "/Library/Python/2.7/site-packages/gunicorn/workers/base.py", line 135, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/Library/Python/2.7/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/Library/Python/2.7/site-packages/gunicorn/app/wsgiapp.py", line 65, in load
+    return self.load_wsgiapp()
+  File "/Library/Python/2.7/site-packages/gunicorn/app/wsgiapp.py", line 52, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/Library/Python/2.7/site-packages/gunicorn/util.py", line 356, in import_app
+    raise ImportError(msg % (module.rsplit(".", 1)[0], obj))
+ImportError: Failed to find application, did you mean 'wsgi:application'?
+[2017-06-15 00:30:01 -0700] [24623] [INFO] Worker exiting (pid: 24623)
+[2017-06-15 00:30:01 -0700] [24620] [INFO] Shutting down: Master
+[2017-06-15 00:30:01 -0700] [24620] [INFO] Reason: Worker failed to boot.
+[2017-06-15 00:31:51 -0700] [24642] [DEBUG] Current configuration:
+  proxy_protocol: False
+  worker_connections: 1000
+  statsd_host: None
+  max_requests_jitter: 0
+  post_fork: <function post_fork at 0x10484bb90>
+  errorlog: /Users/hkapoor/Desktop/DataAnalytics/sms/sms/logs/gunicorn-error.log
+  enable_stdio_inheritance: False
+  worker_class: sync
+  ssl_version: 2
+  suppress_ragged_eofs: True
+  syslog: False
+  syslog_facility: user
+  when_ready: <function when_ready at 0x10484b8c0>
+  pre_fork: <function pre_fork at 0x10484ba28>
+  cert_reqs: 0
+  preload_app: False
+  keepalive: 2
+  accesslog: /Users/hkapoor/Desktop/DataAnalytics/sms/sms/logs/gunicorn-access.log
+  group: 20
+  graceful_timeout: 30
+  do_handshake_on_connect: False
+  spew: False
+  workers: 1
+  proc_name: None
+  sendfile: None
+  pidfile: None
+  umask: 0
+  on_reload: <function on_reload at 0x10484b758>
+  pre_exec: <function pre_exec at 0x1048521b8>
+  worker_tmp_dir: None
+  limit_request_fields: 100
+  pythonpath: None
+  on_exit: <function on_exit at 0x1048529b0>
+  config: ../gunicorn.conf.py
+  logconfig: None
+  check_config: False
+  statsd_prefix: 
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  reload_engine: auto
+  proxy_allow_ips: ['127.0.0.1']
+  pre_request: <function pre_request at 0x104852320>
+  post_request: <function post_request at 0x104852410>
+  forwarded_allow_ips: ['127.0.0.1']
+  worker_int: <function worker_int at 0x10484be60>
+  raw_paste_global_conf: []
+  threads: 1
+  max_requests: 0
+  chdir: /Users/hkapoor/Desktop/DataAnalytics/sms/sms/sms
+  daemon: False
+  user: 501
+  limit_request_line: 4094
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  certfile: None
+  on_starting: <function on_starting at 0x10484b5f0>
+  post_worker_init: <function post_worker_init at 0x10484bcf8>
+  child_exit: <function child_exit at 0x104852578>
+  worker_exit: <function worker_exit at 0x1048526e0>
+  paste: None
+  default_proc_name: wsgi.py
+  syslog_addr: unix:///var/run/syslog
+  syslog_prefix: None
+  ciphers: TLSv1
+  worker_abort: <function worker_abort at 0x104852050>
+  loglevel: debug
+  bind: ['127.0.0.1:9000']
+  raw_env: []
+  initgroups: False
+  capture_output: False
+  reload: False
+  limit_request_field_size: 8190
+  nworkers_changed: <function nworkers_changed at 0x104852848>
+  timeout: 30
+  keyfile: None
+  ca_certs: None
+  tmp_upload_dir: None
+  backlog: 2048
+  logger_class: gunicorn.glogging.Logger
+[2017-06-15 00:31:51 -0700] [24642] [INFO] Starting gunicorn 19.7.1
+[2017-06-15 00:31:51 -0700] [24642] [DEBUG] Arbiter booted
+[2017-06-15 00:31:51 -0700] [24642] [INFO] Listening at: http://127.0.0.1:9000 (24642)
+[2017-06-15 00:31:51 -0700] [24642] [INFO] Using worker: sync
+[2017-06-15 00:31:51 -0700] [24645] [INFO] Booting worker with pid: 24645
+[2017-06-15 00:31:52 -0700] [24645] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/gunicorn/arbiter.py", line 578, in spawn_worker
+    worker.init_process()
+  File "/Library/Python/2.7/site-packages/gunicorn/workers/base.py", line 126, in init_process
+    self.load_wsgi()
+  File "/Library/Python/2.7/site-packages/gunicorn/workers/base.py", line 135, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/Library/Python/2.7/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/Library/Python/2.7/site-packages/gunicorn/app/wsgiapp.py", line 65, in load
+    return self.load_wsgiapp()
+  File "/Library/Python/2.7/site-packages/gunicorn/app/wsgiapp.py", line 52, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/Library/Python/2.7/site-packages/gunicorn/util.py", line 356, in import_app
+    raise ImportError(msg % (module.rsplit(".", 1)[0], obj))
+ImportError: Failed to find application, did you mean 'wsgi:application'?
+[2017-06-15 00:31:52 -0700] [24645] [INFO] Worker exiting (pid: 24645)
+[2017-06-15 00:31:52 -0700] [24642] [DEBUG] 1 workers
+[2017-06-15 00:31:52 -0700] [24642] [INFO] Shutting down: Master
+[2017-06-15 00:31:52 -0700] [24642] [INFO] Reason: Worker failed to boot.
+[2017-06-15 00:33:32 -0700] [24648] [DEBUG] Current configuration:
+  proxy_protocol: False
+  worker_connections: 1000
+  statsd_host: None
+  max_requests_jitter: 0
+  post_fork: <function post_fork at 0x104ae3b90>
+  errorlog: /Users/hkapoor/Desktop/DataAnalytics/sms/sms/logs/gunicorn-error.log
+  enable_stdio_inheritance: False
+  worker_class: sync
+  ssl_version: 2
+  suppress_ragged_eofs: True
+  syslog: False
+  syslog_facility: user
+  when_ready: <function when_ready at 0x104ae38c0>
+  pre_fork: <function pre_fork at 0x104ae3a28>
+  cert_reqs: 0
+  preload_app: False
+  keepalive: 2
+  accesslog: /Users/hkapoor/Desktop/DataAnalytics/sms/sms/logs/gunicorn-access.log
+  group: 20
+  graceful_timeout: 30
+  do_handshake_on_connect: False
+  spew: False
+  workers: 1
+  proc_name: None
+  sendfile: None
+  pidfile: None
+  umask: 0
+  on_reload: <function on_reload at 0x104ae3758>
+  pre_exec: <function pre_exec at 0x104aea1b8>
+  worker_tmp_dir: None
+  limit_request_fields: 100
+  pythonpath: None
+  on_exit: <function on_exit at 0x104aea9b0>
+  config: ../gunicorn.conf.py
+  logconfig: None
+  check_config: False
+  statsd_prefix: 
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  reload_engine: auto
+  proxy_allow_ips: ['127.0.0.1']
+  pre_request: <function pre_request at 0x104aea320>
+  post_request: <function post_request at 0x104aea410>
+  forwarded_allow_ips: ['127.0.0.1']
+  worker_int: <function worker_int at 0x104ae3e60>
+  raw_paste_global_conf: []
+  threads: 1
+  max_requests: 0
+  chdir: /Users/hkapoor/Desktop/DataAnalytics/sms/sms/sms
+  daemon: False
+  user: 501
+  limit_request_line: 4094
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  certfile: None
+  on_starting: <function on_starting at 0x104ae35f0>
+  post_worker_init: <function post_worker_init at 0x104ae3cf8>
+  child_exit: <function child_exit at 0x104aea578>
+  worker_exit: <function worker_exit at 0x104aea6e0>
+  paste: None
+  default_proc_name: wsgi:application
+  syslog_addr: unix:///var/run/syslog
+  syslog_prefix: None
+  ciphers: TLSv1
+  worker_abort: <function worker_abort at 0x104aea050>
+  loglevel: debug
+  bind: ['127.0.0.1:9000']
+  raw_env: []
+  initgroups: False
+  capture_output: False
+  reload: False
+  limit_request_field_size: 8190
+  nworkers_changed: <function nworkers_changed at 0x104aea848>
+  timeout: 30
+  keyfile: None
+  ca_certs: None
+  tmp_upload_dir: None
+  backlog: 2048
+  logger_class: gunicorn.glogging.Logger
+[2017-06-15 00:33:32 -0700] [24648] [INFO] Starting gunicorn 19.7.1
+[2017-06-15 00:33:32 -0700] [24648] [DEBUG] Arbiter booted
+[2017-06-15 00:33:32 -0700] [24648] [INFO] Listening at: http://127.0.0.1:9000 (24648)
+[2017-06-15 00:33:32 -0700] [24648] [INFO] Using worker: sync
+[2017-06-15 00:33:32 -0700] [24651] [INFO] Booting worker with pid: 24651
+[2017-06-15 00:33:32 -0700] [24648] [DEBUG] 1 workers
+[2017-06-15 00:33:32 -0700] [24651] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/gunicorn/arbiter.py", line 578, in spawn_worker
+    worker.init_process()
+  File "/Library/Python/2.7/site-packages/gunicorn/workers/base.py", line 126, in init_process
+    self.load_wsgi()
+  File "/Library/Python/2.7/site-packages/gunicorn/workers/base.py", line 135, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/Library/Python/2.7/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/Library/Python/2.7/site-packages/gunicorn/app/wsgiapp.py", line 65, in load
+    return self.load_wsgiapp()
+  File "/Library/Python/2.7/site-packages/gunicorn/app/wsgiapp.py", line 52, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/Library/Python/2.7/site-packages/gunicorn/util.py", line 352, in import_app
+    __import__(module)
+  File "/Users/hkapoor/Desktop/DataAnalytics/sms/sms/sms/wsgi.py", line 1, in <module>
+    from __init__ import app as application
+  File "/Users/hkapoor/Desktop/DataAnalytics/sms/sms/sms/__init__.py", line 6, in <module>
+    from flask_login import LoginManager
+ImportError: No module named flask_login
+[2017-06-15 00:33:32 -0700] [24651] [INFO] Worker exiting (pid: 24651)
+[2017-06-15 00:33:32 -0700] [24648] [INFO] Shutting down: Master
+[2017-06-15 00:33:32 -0700] [24648] [INFO] Reason: Worker failed to boot.
+[2017-06-15 00:33:39 -0700] [24652] [DEBUG] Current configuration:
+  proxy_protocol: False
+  worker_connections: 1000
+  statsd_host: None
+  max_requests_jitter: 0
+  post_fork: <function post_fork at 0x10316fb90>
+  errorlog: /Users/hkapoor/Desktop/DataAnalytics/sms/sms/logs/gunicorn-error.log
+  enable_stdio_inheritance: False
+  worker_class: sync
+  ssl_version: 2
+  suppress_ragged_eofs: True
+  syslog: False
+  syslog_facility: user
+  when_ready: <function when_ready at 0x10316f8c0>
+  pre_fork: <function pre_fork at 0x10316fa28>
+  cert_reqs: 0
+  preload_app: False
+  keepalive: 2
+  accesslog: /Users/hkapoor/Desktop/DataAnalytics/sms/sms/logs/gunicorn-access.log
+  group: 20
+  graceful_timeout: 30
+  do_handshake_on_connect: False
+  spew: False
+  workers: 1
+  proc_name: None
+  sendfile: None
+  pidfile: None
+  umask: 0
+  on_reload: <function on_reload at 0x10316f758>
+  pre_exec: <function pre_exec at 0x1031761b8>
+  worker_tmp_dir: None
+  limit_request_fields: 100
+  pythonpath: None
+  on_exit: <function on_exit at 0x1031769b0>
+  config: ../gunicorn.conf.py
+  logconfig: None
+  check_config: False
+  statsd_prefix: 
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  reload_engine: auto
+  proxy_allow_ips: ['127.0.0.1']
+  pre_request: <function pre_request at 0x103176320>
+  post_request: <function post_request at 0x103176410>
+  forwarded_allow_ips: ['127.0.0.1']
+  worker_int: <function worker_int at 0x10316fe60>
+  raw_paste_global_conf: []
+  threads: 1
+  max_requests: 0
+  chdir: /Users/hkapoor/Desktop/DataAnalytics/sms/sms/sms
+  daemon: False
+  user: 501
+  limit_request_line: 4094
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  certfile: None
+  on_starting: <function on_starting at 0x10316f5f0>
+  post_worker_init: <function post_worker_init at 0x10316fcf8>
+  child_exit: <function child_exit at 0x103176578>
+  worker_exit: <function worker_exit at 0x1031766e0>
+  paste: None
+  default_proc_name: wsgi:app
+  syslog_addr: unix:///var/run/syslog
+  syslog_prefix: None
+  ciphers: TLSv1
+  worker_abort: <function worker_abort at 0x103176050>
+  loglevel: debug
+  bind: ['127.0.0.1:9000']
+  raw_env: []
+  initgroups: False
+  capture_output: False
+  reload: False
+  limit_request_field_size: 8190
+  nworkers_changed: <function nworkers_changed at 0x103176848>
+  timeout: 30
+  keyfile: None
+  ca_certs: None
+  tmp_upload_dir: None
+  backlog: 2048
+  logger_class: gunicorn.glogging.Logger
+[2017-06-15 00:33:39 -0700] [24652] [INFO] Starting gunicorn 19.7.1
+[2017-06-15 00:33:39 -0700] [24652] [DEBUG] Arbiter booted
+[2017-06-15 00:33:39 -0700] [24652] [INFO] Listening at: http://127.0.0.1:9000 (24652)
+[2017-06-15 00:33:39 -0700] [24652] [INFO] Using worker: sync
+[2017-06-15 00:33:39 -0700] [24655] [INFO] Booting worker with pid: 24655
+[2017-06-15 00:33:39 -0700] [24652] [DEBUG] 1 workers
+[2017-06-15 00:33:39 -0700] [24655] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/gunicorn/arbiter.py", line 578, in spawn_worker
+    worker.init_process()
+  File "/Library/Python/2.7/site-packages/gunicorn/workers/base.py", line 126, in init_process
+    self.load_wsgi()
+  File "/Library/Python/2.7/site-packages/gunicorn/workers/base.py", line 135, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/Library/Python/2.7/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/Library/Python/2.7/site-packages/gunicorn/app/wsgiapp.py", line 65, in load
+    return self.load_wsgiapp()
+  File "/Library/Python/2.7/site-packages/gunicorn/app/wsgiapp.py", line 52, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/Library/Python/2.7/site-packages/gunicorn/util.py", line 352, in import_app
+    __import__(module)
+  File "/Users/hkapoor/Desktop/DataAnalytics/sms/sms/sms/wsgi.py", line 1, in <module>
+    from __init__ import app as application
+  File "/Users/hkapoor/Desktop/DataAnalytics/sms/sms/sms/__init__.py", line 6, in <module>
+    from flask_login import LoginManager
+ImportError: No module named flask_login
+[2017-06-15 00:33:39 -0700] [24655] [INFO] Worker exiting (pid: 24655)
+[2017-06-15 00:33:39 -0700] [24652] [INFO] Shutting down: Master
+[2017-06-15 00:33:39 -0700] [24652] [INFO] Reason: Worker failed to boot.
+[2017-06-15 00:35:01 -0700] [24667] [DEBUG] Current configuration:
+  proxy_protocol: False
+  worker_connections: 1000
+  statsd_host: None
+  max_requests_jitter: 0
+  post_fork: <function post_fork at 0x108692b90>
+  errorlog: /Users/hkapoor/Desktop/DataAnalytics/sms/sms/logs/gunicorn-error.log
+  enable_stdio_inheritance: False
+  worker_class: sync
+  ssl_version: 2
+  suppress_ragged_eofs: True
+  syslog: False
+  syslog_facility: user
+  when_ready: <function when_ready at 0x1086928c0>
+  pre_fork: <function pre_fork at 0x108692a28>
+  cert_reqs: 0
+  preload_app: False
+  keepalive: 2
+  accesslog: /Users/hkapoor/Desktop/DataAnalytics/sms/sms/logs/gunicorn-access.log
+  group: 20
+  graceful_timeout: 30
+  do_handshake_on_connect: False
+  spew: False
+  workers: 1
+  proc_name: None
+  sendfile: None
+  pidfile: None
+  umask: 0
+  on_reload: <function on_reload at 0x108692758>
+  pre_exec: <function pre_exec at 0x1086991b8>
+  worker_tmp_dir: None
+  limit_request_fields: 100
+  pythonpath: None
+  on_exit: <function on_exit at 0x1086999b0>
+  config: None
+  logconfig: None
+  check_config: False
+  statsd_prefix: 
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  reload_engine: auto
+  proxy_allow_ips: ['127.0.0.1']
+  pre_request: <function pre_request at 0x108699320>
+  post_request: <function post_request at 0x108699410>
+  forwarded_allow_ips: ['127.0.0.1']
+  worker_int: <function worker_int at 0x108692e60>
+  raw_paste_global_conf: []
+  threads: 1
+  max_requests: 0
+  chdir: /Users/hkapoor/Desktop/DataAnalytics/sms/sms
+  daemon: False
+  user: 501
+  limit_request_line: 4094
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  certfile: None
+  on_starting: <function on_starting at 0x1086925f0>
+  post_worker_init: <function post_worker_init at 0x108692cf8>
+  child_exit: <function child_exit at 0x108699578>
+  worker_exit: <function worker_exit at 0x1086996e0>
+  paste: None
+  default_proc_name: wsgi:application
+  syslog_addr: unix:///var/run/syslog
+  syslog_prefix: None
+  ciphers: TLSv1
+  worker_abort: <function worker_abort at 0x108699050>
+  loglevel: debug
+  bind: ['127.0.0.1:9000']
+  raw_env: []
+  initgroups: False
+  capture_output: False
+  reload: False
+  limit_request_field_size: 8190
+  nworkers_changed: <function nworkers_changed at 0x108699848>
+  timeout: 30
+  keyfile: None
+  ca_certs: None
+  tmp_upload_dir: None
+  backlog: 2048
+  logger_class: gunicorn.glogging.Logger
+[2017-06-15 00:35:01 -0700] [24667] [INFO] Starting gunicorn 19.7.1
+[2017-06-15 00:35:01 -0700] [24667] [DEBUG] Arbiter booted
+[2017-06-15 00:35:01 -0700] [24667] [INFO] Listening at: http://127.0.0.1:9000 (24667)
+[2017-06-15 00:35:01 -0700] [24667] [INFO] Using worker: sync
+[2017-06-15 00:35:01 -0700] [24670] [INFO] Booting worker with pid: 24670
+[2017-06-15 00:35:01 -0700] [24670] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/gunicorn/arbiter.py", line 578, in spawn_worker
+    worker.init_process()
+  File "/Library/Python/2.7/site-packages/gunicorn/workers/base.py", line 126, in init_process
+    self.load_wsgi()
+  File "/Library/Python/2.7/site-packages/gunicorn/workers/base.py", line 135, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/Library/Python/2.7/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/Library/Python/2.7/site-packages/gunicorn/app/wsgiapp.py", line 65, in load
+    return self.load_wsgiapp()
+  File "/Library/Python/2.7/site-packages/gunicorn/app/wsgiapp.py", line 52, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/Library/Python/2.7/site-packages/gunicorn/util.py", line 352, in import_app
+    __import__(module)
+  File "/Users/hkapoor/Desktop/DataAnalytics/sms/sms/wsgi.py", line 1, in <module>
+    from sms import app as application
+  File "/Users/hkapoor/Desktop/DataAnalytics/sms/sms/sms/__init__.py", line 6, in <module>
+    from flask_login import LoginManager
+ImportError: No module named flask_login
+[2017-06-15 00:35:01 -0700] [24670] [INFO] Worker exiting (pid: 24670)
+[2017-06-15 00:35:01 -0700] [24667] [DEBUG] 1 workers
+[2017-06-15 00:35:01 -0700] [24667] [INFO] Shutting down: Master
+[2017-06-15 00:35:01 -0700] [24667] [INFO] Reason: Worker failed to boot.
+[2017-06-15 00:35:58 -0700] [24671] [DEBUG] Current configuration:
+  proxy_protocol: False
+  worker_connections: 1000
+  statsd_host: None
+  max_requests_jitter: 0
+  post_fork: <function post_fork at 0x1085f4b90>
+  errorlog: /Users/hkapoor/Desktop/DataAnalytics/sms/sms/logs/gunicorn-error.log
+  enable_stdio_inheritance: False
+  worker_class: sync
+  ssl_version: 2
+  suppress_ragged_eofs: True
+  syslog: False
+  syslog_facility: user
+  when_ready: <function when_ready at 0x1085f48c0>
+  pre_fork: <function pre_fork at 0x1085f4a28>
+  cert_reqs: 0
+  preload_app: False
+  keepalive: 2
+  accesslog: /Users/hkapoor/Desktop/DataAnalytics/sms/sms/logs/gunicorn-access.log
+  group: 20
+  graceful_timeout: 30
+  do_handshake_on_connect: False
+  spew: False
+  workers: 1
+  proc_name: None
+  sendfile: None
+  pidfile: None
+  umask: 0
+  on_reload: <function on_reload at 0x1085f4758>
+  pre_exec: <function pre_exec at 0x1085fb1b8>
+  worker_tmp_dir: None
+  limit_request_fields: 100
+  pythonpath: None
+  on_exit: <function on_exit at 0x1085fb9b0>
+  config: None
+  logconfig: None
+  check_config: False
+  statsd_prefix: 
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  reload_engine: auto
+  proxy_allow_ips: ['127.0.0.1']
+  pre_request: <function pre_request at 0x1085fb320>
+  post_request: <function post_request at 0x1085fb410>
+  forwarded_allow_ips: ['127.0.0.1']
+  worker_int: <function worker_int at 0x1085f4e60>
+  raw_paste_global_conf: []
+  threads: 1
+  max_requests: 0
+  chdir: /Users/hkapoor/Desktop/DataAnalytics/sms/sms
+  daemon: False
+  user: 501
+  limit_request_line: 4094
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  certfile: None
+  on_starting: <function on_starting at 0x1085f45f0>
+  post_worker_init: <function post_worker_init at 0x1085f4cf8>
+  child_exit: <function child_exit at 0x1085fb578>
+  worker_exit: <function worker_exit at 0x1085fb6e0>
+  paste: None
+  default_proc_name: wsgi
+  syslog_addr: unix:///var/run/syslog
+  syslog_prefix: None
+  ciphers: TLSv1
+  worker_abort: <function worker_abort at 0x1085fb050>
+  loglevel: debug
+  bind: ['127.0.0.1:9000']
+  raw_env: []
+  initgroups: False
+  capture_output: False
+  reload: False
+  limit_request_field_size: 8190
+  nworkers_changed: <function nworkers_changed at 0x1085fb848>
+  timeout: 30
+  keyfile: None
+  ca_certs: None
+  tmp_upload_dir: None
+  backlog: 2048
+  logger_class: gunicorn.glogging.Logger
+[2017-06-15 00:35:58 -0700] [24671] [INFO] Starting gunicorn 19.7.1
+[2017-06-15 00:35:58 -0700] [24671] [DEBUG] Arbiter booted
+[2017-06-15 00:35:58 -0700] [24671] [INFO] Listening at: http://127.0.0.1:9000 (24671)
+[2017-06-15 00:35:58 -0700] [24671] [INFO] Using worker: sync
+[2017-06-15 00:35:58 -0700] [24674] [INFO] Booting worker with pid: 24674
+[2017-06-15 00:35:58 -0700] [24674] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/gunicorn/arbiter.py", line 578, in spawn_worker
+    worker.init_process()
+  File "/Library/Python/2.7/site-packages/gunicorn/workers/base.py", line 126, in init_process
+    self.load_wsgi()
+  File "/Library/Python/2.7/site-packages/gunicorn/workers/base.py", line 135, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/Library/Python/2.7/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/Library/Python/2.7/site-packages/gunicorn/app/wsgiapp.py", line 65, in load
+    return self.load_wsgiapp()
+  File "/Library/Python/2.7/site-packages/gunicorn/app/wsgiapp.py", line 52, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/Library/Python/2.7/site-packages/gunicorn/util.py", line 352, in import_app
+    __import__(module)
+  File "/Users/hkapoor/Desktop/DataAnalytics/sms/sms/wsgi.py", line 1, in <module>
+    from sms import app as application
+  File "/Users/hkapoor/Desktop/DataAnalytics/sms/sms/sms/__init__.py", line 6, in <module>
+    from flask_login import LoginManager
+ImportError: No module named flask_login
+[2017-06-15 00:35:58 -0700] [24674] [INFO] Worker exiting (pid: 24674)
+[2017-06-15 00:35:58 -0700] [24671] [DEBUG] 1 workers
+[2017-06-15 00:35:58 -0700] [24671] [INFO] Shutting down: Master
+[2017-06-15 00:35:58 -0700] [24671] [INFO] Reason: Worker failed to boot.
+[2017-06-15 00:36:52 -0700] [24676] [DEBUG] Current configuration:
+  proxy_protocol: False
+  worker_connections: 1000
+  statsd_host: None
+  max_requests_jitter: 0
+  post_fork: <function post_fork at 0x100e36b90>
+  errorlog: /Users/hkapoor/Desktop/DataAnalytics/sms/sms/logs/gunicorn-error.log
+  enable_stdio_inheritance: False
+  worker_class: sync
+  ssl_version: 2
+  suppress_ragged_eofs: True
+  syslog: False
+  syslog_facility: user
+  when_ready: <function when_ready at 0x100e368c0>
+  pre_fork: <function pre_fork at 0x100e36a28>
+  cert_reqs: 0
+  preload_app: False
+  keepalive: 2
+  accesslog: /Users/hkapoor/Desktop/DataAnalytics/sms/sms/logs/gunicorn-access.log
+  group: 0
+  graceful_timeout: 30
+  do_handshake_on_connect: False
+  spew: False
+  workers: 1
+  proc_name: None
+  sendfile: None
+  pidfile: None
+  umask: 0
+  on_reload: <function on_reload at 0x100e36758>
+  pre_exec: <function pre_exec at 0x100e3c1b8>
+  worker_tmp_dir: None
+  limit_request_fields: 100
+  pythonpath: None
+  on_exit: <function on_exit at 0x100e3c9b0>
+  config: None
+  logconfig: None
+  check_config: False
+  statsd_prefix: 
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  reload_engine: auto
+  proxy_allow_ips: ['127.0.0.1']
+  pre_request: <function pre_request at 0x100e3c320>
+  post_request: <function post_request at 0x100e3c410>
+  forwarded_allow_ips: ['127.0.0.1']
+  worker_int: <function worker_int at 0x100e36e60>
+  raw_paste_global_conf: []
+  threads: 1
+  max_requests: 0
+  chdir: /Users/hkapoor/Desktop/DataAnalytics/sms/sms
+  daemon: False
+  user: 0
+  limit_request_line: 4094
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  certfile: None
+  on_starting: <function on_starting at 0x100e365f0>
+  post_worker_init: <function post_worker_init at 0x100e36cf8>
+  child_exit: <function child_exit at 0x100e3c578>
+  worker_exit: <function worker_exit at 0x100e3c6e0>
+  paste: None
+  default_proc_name: wsgi
+  syslog_addr: unix:///var/run/syslog
+  syslog_prefix: None
+  ciphers: TLSv1
+  worker_abort: <function worker_abort at 0x100e3c050>
+  loglevel: debug
+  bind: ['127.0.0.1:9000']
+  raw_env: []
+  initgroups: False
+  capture_output: False
+  reload: False
+  limit_request_field_size: 8190
+  nworkers_changed: <function nworkers_changed at 0x100e3c848>
+  timeout: 30
+  keyfile: None
+  ca_certs: None
+  tmp_upload_dir: None
+  backlog: 2048
+  logger_class: gunicorn.glogging.Logger
+[2017-06-15 00:36:52 -0700] [24676] [INFO] Starting gunicorn 19.7.1
+[2017-06-15 00:36:52 -0700] [24676] [DEBUG] Arbiter booted
+[2017-06-15 00:36:52 -0700] [24676] [INFO] Listening at: http://127.0.0.1:9000 (24676)
+[2017-06-15 00:36:52 -0700] [24676] [INFO] Using worker: sync
+[2017-06-15 00:36:52 -0700] [24679] [INFO] Booting worker with pid: 24679
+[2017-06-15 00:36:52 -0700] [24676] [DEBUG] 1 workers
+[2017-06-15 00:36:52 -0700] [24679] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/gunicorn/arbiter.py", line 578, in spawn_worker
+    worker.init_process()
+  File "/Library/Python/2.7/site-packages/gunicorn/workers/base.py", line 126, in init_process
+    self.load_wsgi()
+  File "/Library/Python/2.7/site-packages/gunicorn/workers/base.py", line 135, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/Library/Python/2.7/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/Library/Python/2.7/site-packages/gunicorn/app/wsgiapp.py", line 65, in load
+    return self.load_wsgiapp()
+  File "/Library/Python/2.7/site-packages/gunicorn/app/wsgiapp.py", line 52, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/Library/Python/2.7/site-packages/gunicorn/util.py", line 352, in import_app
+    __import__(module)
+  File "/Users/hkapoor/Desktop/DataAnalytics/sms/sms/wsgi.py", line 1, in <module>
+    from sms import app as application
+  File "/Users/hkapoor/Desktop/DataAnalytics/sms/sms/sms/__init__.py", line 6, in <module>
+    from flask_login import LoginManager
+ImportError: No module named flask_login
+[2017-06-15 00:36:52 -0700] [24679] [INFO] Worker exiting (pid: 24679)
+[2017-06-15 00:36:52 -0700] [24676] [INFO] Shutting down: Master
+[2017-06-15 00:36:52 -0700] [24676] [INFO] Reason: Worker failed to boot.
+[2017-06-15 00:37:25 -0700] [24682] [DEBUG] Current configuration:
+  proxy_protocol: False
+  worker_connections: 1000
+  statsd_host: None
+  max_requests_jitter: 0
+  post_fork: <function post_fork at 0x10b9bc9b0>
+  errorlog: /Users/hkapoor/Desktop/DataAnalytics/sms/sms/logs/gunicorn-error.log
+  enable_stdio_inheritance: False
+  worker_class: sync
+  ssl_version: 2
+  suppress_ragged_eofs: True
+  syslog: False
+  syslog_facility: user
+  when_ready: <function when_ready at 0x10b9bc6e0>
+  pre_fork: <function pre_fork at 0x10b9bc848>
+  cert_reqs: 0
+  preload_app: False
+  keepalive: 2
+  accesslog: /Users/hkapoor/Desktop/DataAnalytics/sms/sms/logs/gunicorn-access.log
+  group: 0
+  graceful_timeout: 30
+  do_handshake_on_connect: False
+  spew: False
+  workers: 1
+  proc_name: None
+  sendfile: None
+  pidfile: None
+  umask: 0
+  on_reload: <function on_reload at 0x10b9bc578>
+  pre_exec: <function pre_exec at 0x10b9bcf50>
+  worker_tmp_dir: None
+  limit_request_fields: 100
+  pythonpath: None
+  on_exit: <function on_exit at 0x10b9c17d0>
+  config: None
+  logconfig: None
+  check_config: False
+  statsd_prefix: 
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  reload_engine: auto
+  proxy_allow_ips: ['127.0.0.1']
+  pre_request: <function pre_request at 0x10b9c1140>
+  post_request: <function post_request at 0x10b9c1230>
+  forwarded_allow_ips: ['127.0.0.1']
+  worker_int: <function worker_int at 0x10b9bcc80>
+  raw_paste_global_conf: []
+  threads: 1
+  max_requests: 0
+  chdir: /Users/hkapoor/Desktop/DataAnalytics/sms/sms
+  daemon: False
+  user: 0
+  limit_request_line: 4094
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  certfile: None
+  on_starting: <function on_starting at 0x10b9bc410>
+  post_worker_init: <function post_worker_init at 0x10b9bcb18>
+  child_exit: <function child_exit at 0x10b9c1398>
+  worker_exit: <function worker_exit at 0x10b9c1500>
+  paste: None
+  default_proc_name: wsgi
+  syslog_addr: unix:///var/run/syslog
+  syslog_prefix: None
+  ciphers: TLSv1
+  worker_abort: <function worker_abort at 0x10b9bcde8>
+  loglevel: debug
+  bind: ['127.0.0.0:8000']
+  raw_env: []
+  initgroups: False
+  capture_output: False
+  reload: False
+  limit_request_field_size: 8190
+  nworkers_changed: <function nworkers_changed at 0x10b9c1668>
+  timeout: 30
+  keyfile: None
+  ca_certs: None
+  tmp_upload_dir: None
+  backlog: 2048
+  logger_class: gunicorn.glogging.Logger
+[2017-06-15 00:37:25 -0700] [24682] [INFO] Starting gunicorn 19.7.1
+[2017-06-15 00:37:25 -0700] [24682] [ERROR] Invalid address: ('127.0.0.0', 8000)
+[2017-06-15 00:37:25 -0700] [24682] [DEBUG] connection to ('127.0.0.0', 8000) failed: [Errno 49] Can't assign requested address
+[2017-06-15 00:37:25 -0700] [24682] [ERROR] Retrying in 1 second.
+[2017-06-15 00:37:26 -0700] [24682] [ERROR] Invalid address: ('127.0.0.0', 8000)
+[2017-06-15 00:37:26 -0700] [24682] [DEBUG] connection to ('127.0.0.0', 8000) failed: [Errno 49] Can't assign requested address
+[2017-06-15 00:37:26 -0700] [24682] [ERROR] Retrying in 1 second.
+[2017-06-15 00:37:27 -0700] [24682] [ERROR] Invalid address: ('127.0.0.0', 8000)
+[2017-06-15 00:37:27 -0700] [24682] [DEBUG] connection to ('127.0.0.0', 8000) failed: [Errno 49] Can't assign requested address
+[2017-06-15 00:37:27 -0700] [24682] [ERROR] Retrying in 1 second.
+[2017-06-15 00:37:28 -0700] [24682] [ERROR] Invalid address: ('127.0.0.0', 8000)
+[2017-06-15 00:37:28 -0700] [24682] [DEBUG] connection to ('127.0.0.0', 8000) failed: [Errno 49] Can't assign requested address
+[2017-06-15 00:37:28 -0700] [24682] [ERROR] Retrying in 1 second.
+[2017-06-15 00:37:29 -0700] [24682] [ERROR] Invalid address: ('127.0.0.0', 8000)
+[2017-06-15 00:37:29 -0700] [24682] [DEBUG] connection to ('127.0.0.0', 8000) failed: [Errno 49] Can't assign requested address
+[2017-06-15 00:37:29 -0700] [24682] [ERROR] Retrying in 1 second.
+[2017-06-15 00:37:30 -0700] [24682] [ERROR] Can't connect to ('127.0.0.0', 8000)
+[2017-06-15 00:39:05 -0700] [24691] [DEBUG] Current configuration:
+  proxy_protocol: False
+  worker_connections: 1000
+  statsd_host: None
+  max_requests_jitter: 0
+  post_fork: <function post_fork at 0x10fbc29b0>
+  errorlog: /Users/hkapoor/Desktop/DataAnalytics/sms/sms/logs/gunicorn-error.log
+  enable_stdio_inheritance: False
+  worker_class: sync
+  ssl_version: 2
+  suppress_ragged_eofs: True
+  syslog: False
+  syslog_facility: user
+  when_ready: <function when_ready at 0x10fbc26e0>
+  pre_fork: <function pre_fork at 0x10fbc2848>
+  cert_reqs: 0
+  preload_app: False
+  keepalive: 2
+  accesslog: /Users/hkapoor/Desktop/DataAnalytics/sms/sms/logs/gunicorn-access.log
+  group: 0
+  graceful_timeout: 30
+  do_handshake_on_connect: False
+  spew: False
+  workers: 1
+  proc_name: None
+  sendfile: None
+  pidfile: None
+  umask: 0
+  on_reload: <function on_reload at 0x10fbc2578>
+  pre_exec: <function pre_exec at 0x10fbc2f50>
+  worker_tmp_dir: None
+  limit_request_fields: 100
+  pythonpath: None
+  on_exit: <function on_exit at 0x10fbc77d0>
+  config: None
+  logconfig: None
+  check_config: False
+  statsd_prefix: 
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  reload_engine: auto
+  proxy_allow_ips: ['127.0.0.1']
+  pre_request: <function pre_request at 0x10fbc7140>
+  post_request: <function post_request at 0x10fbc7230>
+  forwarded_allow_ips: ['127.0.0.1']
+  worker_int: <function worker_int at 0x10fbc2c80>
+  raw_paste_global_conf: []
+  threads: 1
+  max_requests: 0
+  chdir: /Users/hkapoor/Desktop/DataAnalytics/sms/sms
+  daemon: False
+  user: 0
+  limit_request_line: 4094
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  certfile: None
+  on_starting: <function on_starting at 0x10fbc2410>
+  post_worker_init: <function post_worker_init at 0x10fbc2b18>
+  child_exit: <function child_exit at 0x10fbc7398>
+  worker_exit: <function worker_exit at 0x10fbc7500>
+  paste: None
+  default_proc_name: wsgi
+  syslog_addr: unix:///var/run/syslog
+  syslog_prefix: None
+  ciphers: TLSv1
+  worker_abort: <function worker_abort at 0x10fbc2de8>
+  loglevel: debug
+  bind: ['0.0.0.0:8000']
+  raw_env: []
+  initgroups: False
+  capture_output: False
+  reload: False
+  limit_request_field_size: 8190
+  nworkers_changed: <function nworkers_changed at 0x10fbc7668>
+  timeout: 30
+  keyfile: None
+  ca_certs: None
+  tmp_upload_dir: None
+  backlog: 2048
+  logger_class: gunicorn.glogging.Logger
+[2017-06-15 00:39:05 -0700] [24691] [INFO] Starting gunicorn 19.7.1
+[2017-06-15 00:39:05 -0700] [24691] [DEBUG] Arbiter booted
+[2017-06-15 00:39:05 -0700] [24691] [INFO] Listening at: http://0.0.0.0:8000 (24691)
+[2017-06-15 00:39:05 -0700] [24691] [INFO] Using worker: sync
+[2017-06-15 00:39:05 -0700] [24694] [INFO] Booting worker with pid: 24694
+[2017-06-15 00:39:05 -0700] [24691] [DEBUG] 1 workers
+[2017-06-15 00:39:24 -0700] [24694] [DEBUG] GET /
+[2017-06-15 00:39:24 -0700] [24694] [DEBUG] GET /static/css/bootstrap.min.css
+[2017-06-15 00:39:24 -0700] [24694] [DEBUG] GET /static/css/light-bootstrap-dashboard.css
+[2017-06-15 00:39:24 -0700] [24694] [DEBUG] GET /static/css/pe-icon-7-stroke.css
+[2017-06-15 00:39:24 -0700] [24694] [DEBUG] GET /static/js/jquery.min.js
+[2017-06-15 00:39:24 -0700] [24694] [DEBUG] GET /static/js/jquery-ui.min.js
+[2017-06-15 00:39:24 -0700] [24694] [DEBUG] GET /static/js/bootstrap.min.js
+[2017-06-15 00:39:24 -0700] [24694] [DEBUG] GET /static/js/jquery.validate.min.js
+[2017-06-15 00:39:24 -0700] [24694] [DEBUG] GET /static/js/moment.min.js
+[2017-06-15 00:39:24 -0700] [24694] [DEBUG] GET /static/js/bootstrap-datetimepicker.js
+[2017-06-15 00:39:24 -0700] [24694] [DEBUG] GET /static/js/bootstrap-selectpicker.js
+[2017-06-15 00:39:24 -0700] [24694] [DEBUG] GET /static/js/bootstrap-checkbox-radio-switch-tags.js
+[2017-06-15 00:39:24 -0700] [24694] [DEBUG] GET /static/js/chartist.min.js
+[2017-06-15 00:39:24 -0700] [24694] [DEBUG] GET /static/js/bootstrap-notify.js
+[2017-06-15 00:39:24 -0700] [24694] [DEBUG] GET /static/js/sweetalert2.js
+[2017-06-15 00:39:24 -0700] [24694] [DEBUG] GET /static/js/jquery-jvectormap.js
+[2017-06-15 00:39:24 -0700] [24694] [DEBUG] GET /static/js/jquery.bootstrap.wizard.min.js
+[2017-06-15 00:39:24 -0700] [24694] [DEBUG] GET /static/js/bootstrap-table.js
+[2017-06-15 00:39:24 -0700] [24694] [DEBUG] GET /static/js/fullcalendar.min.js
+[2017-06-15 00:39:24 -0700] [24694] [DEBUG] GET /static/js/light-bootstrap-dashboard.js
+[2017-06-15 00:39:24 -0700] [24694] [DEBUG] GET /static/img/full-screen-image-1.jpg
+[2017-06-15 00:39:25 -0700] [24694] [DEBUG] GET /static/img/favicon.ico
+[2017-06-15 00:39:28 -0700] [24691] [INFO] Handling signal: int
+[2017-06-15 00:39:28 -0700] [24694] [INFO] Worker exiting (pid: 24694)
+[2017-06-15 00:39:28 -0700] [24691] [INFO] Shutting down: Master
+[2017-06-15 00:39:48 -0700] [24701] [DEBUG] Current configuration:
+  proxy_protocol: False
+  worker_connections: 1000
+  statsd_host: None
+  max_requests_jitter: 0
+  post_fork: <function post_fork at 0x103d3c9b0>
+  errorlog: /Users/hkapoor/Desktop/DataAnalytics/sms/sms/logs/gunicorn-error.log
+  enable_stdio_inheritance: False
+  worker_class: sync
+  ssl_version: 2
+  suppress_ragged_eofs: True
+  syslog: False
+  syslog_facility: user
+  when_ready: <function when_ready at 0x103d3c6e0>
+  pre_fork: <function pre_fork at 0x103d3c848>
+  cert_reqs: 0
+  preload_app: False
+  keepalive: 2
+  accesslog: /Users/hkapoor/Desktop/DataAnalytics/sms/sms/logs/gunicorn-access.log
+  group: 0
+  graceful_timeout: 30
+  do_handshake_on_connect: False
+  spew: False
+  workers: 1
+  proc_name: None
+  sendfile: None
+  pidfile: None
+  umask: 0
+  on_reload: <function on_reload at 0x103d3c578>
+  pre_exec: <function pre_exec at 0x103d3cf50>
+  worker_tmp_dir: None
+  limit_request_fields: 100
+  pythonpath: None
+  on_exit: <function on_exit at 0x103d417d0>
+  config: gunicorn.conf.py
+  logconfig: None
+  check_config: False
+  statsd_prefix: 
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  reload_engine: auto
+  proxy_allow_ips: ['127.0.0.1']
+  pre_request: <function pre_request at 0x103d41140>
+  post_request: <function post_request at 0x103d41230>
+  forwarded_allow_ips: ['127.0.0.1']
+  worker_int: <function worker_int at 0x103d3cc80>
+  raw_paste_global_conf: []
+  threads: 1
+  max_requests: 0
+  chdir: /Users/hkapoor/Desktop/DataAnalytics/sms/sms
+  daemon: False
+  user: 0
+  limit_request_line: 4094
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  certfile: None
+  on_starting: <function on_starting at 0x103d3c410>
+  post_worker_init: <function post_worker_init at 0x103d3cb18>
+  child_exit: <function child_exit at 0x103d41398>
+  worker_exit: <function worker_exit at 0x103d41500>
+  paste: None
+  default_proc_name: wsgi
+  syslog_addr: unix:///var/run/syslog
+  syslog_prefix: None
+  ciphers: TLSv1
+  worker_abort: <function worker_abort at 0x103d3cde8>
+  loglevel: debug
+  bind: ['127.0.0.1:9000']
+  raw_env: []
+  initgroups: False
+  capture_output: False
+  reload: False
+  limit_request_field_size: 8190
+  nworkers_changed: <function nworkers_changed at 0x103d41668>
+  timeout: 30
+  keyfile: None
+  ca_certs: None
+  tmp_upload_dir: None
+  backlog: 2048
+  logger_class: gunicorn.glogging.Logger
+[2017-06-15 00:39:48 -0700] [24701] [INFO] Starting gunicorn 19.7.1
+[2017-06-15 00:39:48 -0700] [24701] [DEBUG] Arbiter booted
+[2017-06-15 00:39:48 -0700] [24701] [INFO] Listening at: http://127.0.0.1:9000 (24701)
+[2017-06-15 00:39:48 -0700] [24701] [INFO] Using worker: sync
+[2017-06-15 00:39:48 -0700] [24704] [INFO] Booting worker with pid: 24704
+[2017-06-15 00:39:48 -0700] [24701] [DEBUG] 1 workers
+[2017-06-15 00:39:56 -0700] [24704] [DEBUG] GET /
+[2017-06-15 00:39:57 -0700] [24704] [DEBUG] GET /static/css/bootstrap.min.css
+[2017-06-15 00:39:57 -0700] [24704] [DEBUG] GET /static/css/light-bootstrap-dashboard.css
+[2017-06-15 00:39:57 -0700] [24704] [DEBUG] GET /static/css/pe-icon-7-stroke.css
+[2017-06-15 00:39:57 -0700] [24704] [DEBUG] GET /static/js/jquery.min.js
+[2017-06-15 00:39:57 -0700] [24704] [DEBUG] GET /static/js/jquery-ui.min.js
+[2017-06-15 00:39:57 -0700] [24704] [DEBUG] GET /static/js/bootstrap.min.js
+[2017-06-15 00:39:57 -0700] [24704] [DEBUG] GET /static/js/jquery.validate.min.js
+[2017-06-15 00:39:57 -0700] [24704] [DEBUG] GET /static/js/moment.min.js
+[2017-06-15 00:39:57 -0700] [24704] [DEBUG] GET /static/js/bootstrap-datetimepicker.js
+[2017-06-15 00:39:57 -0700] [24704] [DEBUG] GET /static/js/bootstrap-selectpicker.js
+[2017-06-15 00:39:57 -0700] [24704] [DEBUG] GET /static/js/bootstrap-checkbox-radio-switch-tags.js
+[2017-06-15 00:39:57 -0700] [24704] [DEBUG] GET /static/js/chartist.min.js
+[2017-06-15 00:39:57 -0700] [24704] [DEBUG] GET /static/js/bootstrap-notify.js
+[2017-06-15 00:39:57 -0700] [24704] [DEBUG] GET /static/js/sweetalert2.js
+[2017-06-15 00:39:57 -0700] [24704] [DEBUG] GET /static/js/jquery-jvectormap.js
+[2017-06-15 00:39:57 -0700] [24704] [DEBUG] GET /static/js/jquery.bootstrap.wizard.min.js
+[2017-06-15 00:39:57 -0700] [24704] [DEBUG] GET /static/js/bootstrap-table.js
+[2017-06-15 00:39:57 -0700] [24704] [DEBUG] GET /static/js/fullcalendar.min.js
+[2017-06-15 00:39:57 -0700] [24704] [DEBUG] GET /static/js/light-bootstrap-dashboard.js
+[2017-06-15 00:39:57 -0700] [24704] [DEBUG] GET /static/img/full-screen-image-1.jpg
+[2017-06-15 00:39:57 -0700] [24704] [DEBUG] GET /static/img/favicon.ico
+[2017-06-15 00:40:00 -0700] [24701] [INFO] Handling signal: int
+[2017-06-15 00:40:00 -0700] [24704] [INFO] Worker exiting (pid: 24704)
+[2017-06-15 00:40:00 -0700] [24701] [INFO] Shutting down: Master
+[2017-06-15 00:43:50 -0700] [24748] [DEBUG] Current configuration:
+  proxy_protocol: False
+  worker_connections: 1000
+  statsd_host: None
+  max_requests_jitter: 0
+  post_fork: <function post_fork at 0x10fe9fb90>
+  errorlog: /Users/hkapoor/Desktop/DataAnalytics/sms/sms/logs/gunicorn-error.log
+  enable_stdio_inheritance: False
+  worker_class: sync
+  ssl_version: 2
+  suppress_ragged_eofs: True
+  syslog: False
+  syslog_facility: user
+  when_ready: <function when_ready at 0x10fe9f8c0>
+  pre_fork: <function pre_fork at 0x10fe9fa28>
+  cert_reqs: 0
+  preload_app: False
+  keepalive: 2
+  accesslog: /Users/hkapoor/Desktop/DataAnalytics/sms/sms/logs/gunicorn-access.log
+  group: 0
+  graceful_timeout: 30
+  do_handshake_on_connect: False
+  spew: False
+  workers: 1
+  proc_name: None
+  sendfile: None
+  pidfile: None
+  umask: 0
+  on_reload: <function on_reload at 0x10fe9f758>
+  pre_exec: <function pre_exec at 0x10fea51b8>
+  worker_tmp_dir: None
+  limit_request_fields: 100
+  pythonpath: None
+  on_exit: <function on_exit at 0x10fea59b0>
+  config: gunicorn.conf.py
+  logconfig: None
+  check_config: False
+  statsd_prefix: 
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  reload_engine: auto
+  proxy_allow_ips: ['127.0.0.1']
+  pre_request: <function pre_request at 0x10fea5320>
+  post_request: <function post_request at 0x10fea5410>
+  forwarded_allow_ips: ['127.0.0.1']
+  worker_int: <function worker_int at 0x10fe9fe60>
+  raw_paste_global_conf: []
+  threads: 1
+  max_requests: 0
+  chdir: /Users/hkapoor/Desktop/DataAnalytics/sms/sms
+  daemon: True
+  user: 0
+  limit_request_line: 4094
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  certfile: None
+  on_starting: <function on_starting at 0x10fe9f5f0>
+  post_worker_init: <function post_worker_init at 0x10fe9fcf8>
+  child_exit: <function child_exit at 0x10fea5578>
+  worker_exit: <function worker_exit at 0x10fea56e0>
+  paste: None
+  default_proc_name: wsgi
+  syslog_addr: unix:///var/run/syslog
+  syslog_prefix: None
+  ciphers: TLSv1
+  worker_abort: <function worker_abort at 0x10fea5050>
+  loglevel: debug
+  bind: ['127.0.0.1:9000']
+  raw_env: []
+  initgroups: False
+  capture_output: False
+  reload: False
+  limit_request_field_size: 8190
+  nworkers_changed: <function nworkers_changed at 0x10fea5848>
+  timeout: 30
+  keyfile: None
+  ca_certs: None
+  tmp_upload_dir: None
+  backlog: 2048
+  logger_class: gunicorn.glogging.Logger
+[2017-06-15 00:43:50 -0700] [24748] [INFO] Starting gunicorn 19.7.1
+[2017-06-15 00:43:50 -0700] [24748] [DEBUG] Arbiter booted
+[2017-06-15 00:43:50 -0700] [24748] [INFO] Listening at: http://127.0.0.1:9000 (24748)
+[2017-06-15 00:43:50 -0700] [24748] [INFO] Using worker: sync
+[2017-06-15 00:43:50 -0700] [24751] [INFO] Booting worker with pid: 24751
+[2017-06-15 00:43:50 -0700] [24751] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/gunicorn/arbiter.py", line 578, in spawn_worker
+    worker.init_process()
+  File "/Library/Python/2.7/site-packages/gunicorn/workers/base.py", line 126, in init_process
+    self.load_wsgi()
+  File "/Library/Python/2.7/site-packages/gunicorn/workers/base.py", line 135, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/Library/Python/2.7/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/Library/Python/2.7/site-packages/gunicorn/app/wsgiapp.py", line 65, in load
+    return self.load_wsgiapp()
+  File "/Library/Python/2.7/site-packages/gunicorn/app/wsgiapp.py", line 52, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/Library/Python/2.7/site-packages/gunicorn/util.py", line 352, in import_app
+    __import__(module)
+  File "/Users/hkapoor/Desktop/DataAnalytics/sms/sms/wsgi.py", line 1, in <module>
+    from sms import app as application
+  File "/Users/hkapoor/Desktop/DataAnalytics/sms/sms/sms/__init__.py", line 6, in <module>
+    from flask_login import LoginManager
+ImportError: No module named flask_login
+[2017-06-15 00:43:50 -0700] [24751] [INFO] Worker exiting (pid: 24751)
+[2017-06-15 00:43:50 -0700] [24748] [INFO] Shutting down: Master
+[2017-06-15 00:43:50 -0700] [24748] [INFO] Reason: Worker failed to boot.
+[2017-06-15 00:43:57 -0700] [24753] [DEBUG] Current configuration:
+  proxy_protocol: False
+  worker_connections: 1000
+  statsd_host: None
+  max_requests_jitter: 0
+  post_fork: <function post_fork at 0x102260b90>
+  errorlog: /Users/hkapoor/Desktop/DataAnalytics/sms/sms/logs/gunicorn-error.log
+  enable_stdio_inheritance: False
+  worker_class: sync
+  ssl_version: 2
+  suppress_ragged_eofs: True
+  syslog: False
+  syslog_facility: user
+  when_ready: <function when_ready at 0x1022608c0>
+  pre_fork: <function pre_fork at 0x102260a28>
+  cert_reqs: 0
+  preload_app: False
+  keepalive: 2
+  accesslog: /Users/hkapoor/Desktop/DataAnalytics/sms/sms/logs/gunicorn-access.log
+  group: 0
+  graceful_timeout: 30
+  do_handshake_on_connect: False
+  spew: False
+  workers: 1
+  proc_name: None
+  sendfile: None
+  pidfile: None
+  umask: 0
+  on_reload: <function on_reload at 0x102260758>
+  pre_exec: <function pre_exec at 0x1022661b8>
+  worker_tmp_dir: None
+  limit_request_fields: 100
+  pythonpath: None
+  on_exit: <function on_exit at 0x1022669b0>
+  config: gunicorn.conf.py
+  logconfig: None
+  check_config: False
+  statsd_prefix: 
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  reload_engine: auto
+  proxy_allow_ips: ['127.0.0.1']
+  pre_request: <function pre_request at 0x102266320>
+  post_request: <function post_request at 0x102266410>
+  forwarded_allow_ips: ['127.0.0.1']
+  worker_int: <function worker_int at 0x102260e60>
+  raw_paste_global_conf: []
+  threads: 1
+  max_requests: 0
+  chdir: /Users/hkapoor/Desktop/DataAnalytics/sms/sms
+  daemon: False
+  user: 0
+  limit_request_line: 4094
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  certfile: None
+  on_starting: <function on_starting at 0x1022605f0>
+  post_worker_init: <function post_worker_init at 0x102260cf8>
+  child_exit: <function child_exit at 0x102266578>
+  worker_exit: <function worker_exit at 0x1022666e0>
+  paste: None
+  default_proc_name: wsgi
+  syslog_addr: unix:///var/run/syslog
+  syslog_prefix: None
+  ciphers: TLSv1
+  worker_abort: <function worker_abort at 0x102266050>
+  loglevel: debug
+  bind: ['127.0.0.1:9000']
+  raw_env: []
+  initgroups: False
+  capture_output: False
+  reload: False
+  limit_request_field_size: 8190
+  nworkers_changed: <function nworkers_changed at 0x102266848>
+  timeout: 30
+  keyfile: None
+  ca_certs: None
+  tmp_upload_dir: None
+  backlog: 2048
+  logger_class: gunicorn.glogging.Logger
+[2017-06-15 00:43:57 -0700] [24753] [INFO] Starting gunicorn 19.7.1
+[2017-06-15 00:43:57 -0700] [24753] [DEBUG] Arbiter booted
+[2017-06-15 00:43:57 -0700] [24753] [INFO] Listening at: http://127.0.0.1:9000 (24753)
+[2017-06-15 00:43:57 -0700] [24753] [INFO] Using worker: sync
+[2017-06-15 00:43:57 -0700] [24756] [INFO] Booting worker with pid: 24756
+[2017-06-15 00:43:57 -0700] [24753] [DEBUG] 1 workers
+[2017-06-15 00:43:57 -0700] [24756] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/gunicorn/arbiter.py", line 578, in spawn_worker
+    worker.init_process()
+  File "/Library/Python/2.7/site-packages/gunicorn/workers/base.py", line 126, in init_process
+    self.load_wsgi()
+  File "/Library/Python/2.7/site-packages/gunicorn/workers/base.py", line 135, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/Library/Python/2.7/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/Library/Python/2.7/site-packages/gunicorn/app/wsgiapp.py", line 65, in load
+    return self.load_wsgiapp()
+  File "/Library/Python/2.7/site-packages/gunicorn/app/wsgiapp.py", line 52, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/Library/Python/2.7/site-packages/gunicorn/util.py", line 352, in import_app
+    __import__(module)
+  File "/Users/hkapoor/Desktop/DataAnalytics/sms/sms/wsgi.py", line 1, in <module>
+    from sms import app as application
+  File "/Users/hkapoor/Desktop/DataAnalytics/sms/sms/sms/__init__.py", line 6, in <module>
+    from flask_login import LoginManager
+ImportError: No module named flask_login
+[2017-06-15 00:43:57 -0700] [24756] [INFO] Worker exiting (pid: 24756)
+[2017-06-15 00:43:57 -0700] [24753] [INFO] Shutting down: Master
+[2017-06-15 00:43:57 -0700] [24753] [INFO] Reason: Worker failed to boot.
+[2017-06-15 00:46:59 -0700] [24765] [DEBUG] Current configuration:
+  proxy_protocol: False
+  worker_connections: 1000
+  statsd_host: None
+  max_requests_jitter: 0
+  post_fork: <function post_fork at 0x101a90b90>
+  errorlog: /Users/hkapoor/Desktop/DataAnalytics/sms/sms/logs/gunicorn-error.log
+  enable_stdio_inheritance: False
+  worker_class: sync
+  ssl_version: 2
+  suppress_ragged_eofs: True
+  syslog: False
+  syslog_facility: user
+  when_ready: <function when_ready at 0x101a908c0>
+  pre_fork: <function pre_fork at 0x101a90a28>
+  cert_reqs: 0
+  preload_app: False
+  keepalive: 2
+  accesslog: /Users/hkapoor/Desktop/DataAnalytics/sms/sms/logs/gunicorn-access.log
+  group: 0
+  graceful_timeout: 30
+  do_handshake_on_connect: False
+  spew: False
+  workers: 1
+  proc_name: None
+  sendfile: None
+  pidfile: None
+  umask: 0
+  on_reload: <function on_reload at 0x101a90758>
+  pre_exec: <function pre_exec at 0x101a961b8>
+  worker_tmp_dir: None
+  limit_request_fields: 100
+  pythonpath: /Users/hkapoor/Desktop/DataAnalytics/sms/sms/py27env/bin/
+  on_exit: <function on_exit at 0x101a969b0>
+  config: gunicorn.conf.py
+  logconfig: None
+  check_config: False
+  statsd_prefix: 
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  reload_engine: auto
+  proxy_allow_ips: ['127.0.0.1']
+  pre_request: <function pre_request at 0x101a96320>
+  post_request: <function post_request at 0x101a96410>
+  forwarded_allow_ips: ['127.0.0.1']
+  worker_int: <function worker_int at 0x101a90e60>
+  raw_paste_global_conf: []
+  threads: 1
+  max_requests: 0
+  chdir: /Users/hkapoor/Desktop/DataAnalytics/sms/sms
+  daemon: False
+  user: 0
+  limit_request_line: 4094
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  certfile: None
+  on_starting: <function on_starting at 0x101a905f0>
+  post_worker_init: <function post_worker_init at 0x101a90cf8>
+  child_exit: <function child_exit at 0x101a96578>
+  worker_exit: <function worker_exit at 0x101a966e0>
+  paste: None
+  default_proc_name: wsgi
+  syslog_addr: unix:///var/run/syslog
+  syslog_prefix: None
+  ciphers: TLSv1
+  worker_abort: <function worker_abort at 0x101a96050>
+  loglevel: debug
+  bind: ['127.0.0.1:9000']
+  raw_env: []
+  initgroups: False
+  capture_output: False
+  reload: False
+  limit_request_field_size: 8190
+  nworkers_changed: <function nworkers_changed at 0x101a96848>
+  timeout: 30
+  keyfile: None
+  ca_certs: None
+  tmp_upload_dir: None
+  backlog: 2048
+  logger_class: gunicorn.glogging.Logger
+[2017-06-15 00:46:59 -0700] [24765] [INFO] Starting gunicorn 19.7.1
+[2017-06-15 00:46:59 -0700] [24765] [DEBUG] Arbiter booted
+[2017-06-15 00:46:59 -0700] [24765] [INFO] Listening at: http://127.0.0.1:9000 (24765)
+[2017-06-15 00:46:59 -0700] [24765] [INFO] Using worker: sync
+[2017-06-15 00:46:59 -0700] [24768] [INFO] Booting worker with pid: 24768
+[2017-06-15 00:46:59 -0700] [24768] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/gunicorn/arbiter.py", line 578, in spawn_worker
+    worker.init_process()
+  File "/Library/Python/2.7/site-packages/gunicorn/workers/base.py", line 126, in init_process
+    self.load_wsgi()
+  File "/Library/Python/2.7/site-packages/gunicorn/workers/base.py", line 135, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/Library/Python/2.7/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/Library/Python/2.7/site-packages/gunicorn/app/wsgiapp.py", line 65, in load
+    return self.load_wsgiapp()
+  File "/Library/Python/2.7/site-packages/gunicorn/app/wsgiapp.py", line 52, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/Library/Python/2.7/site-packages/gunicorn/util.py", line 352, in import_app
+    __import__(module)
+  File "/Users/hkapoor/Desktop/DataAnalytics/sms/sms/wsgi.py", line 1, in <module>
+    from sms import app as application
+  File "/Users/hkapoor/Desktop/DataAnalytics/sms/sms/sms/__init__.py", line 6, in <module>
+    from flask_login import LoginManager
+ImportError: No module named flask_login
+[2017-06-15 00:46:59 -0700] [24768] [INFO] Worker exiting (pid: 24768)
+[2017-06-15 00:46:59 -0700] [24765] [INFO] Shutting down: Master
+[2017-06-15 00:46:59 -0700] [24765] [INFO] Reason: Worker failed to boot.
+[2017-06-15 00:49:24 -0700] [24778] [DEBUG] Current configuration:
+  proxy_protocol: False
+  worker_connections: 1000
+  statsd_host: None
+  max_requests_jitter: 0
+  post_fork: <function post_fork at 0x10acfb9b0>
+  errorlog: /Users/hkapoor/Desktop/DataAnalytics/sms/sms/logs/gunicorn-error.log
+  enable_stdio_inheritance: False
+  worker_class: sync
+  ssl_version: 2
+  suppress_ragged_eofs: True
+  syslog: False
+  syslog_facility: user
+  when_ready: <function when_ready at 0x10acfb6e0>
+  pre_fork: <function pre_fork at 0x10acfb848>
+  cert_reqs: 0
+  preload_app: False
+  keepalive: 2
+  accesslog: /Users/hkapoor/Desktop/DataAnalytics/sms/sms/logs/gunicorn-access.log
+  group: 0
+  graceful_timeout: 30
+  do_handshake_on_connect: False
+  spew: False
+  workers: 1
+  proc_name: None
+  sendfile: None
+  pidfile: None
+  umask: 0
+  on_reload: <function on_reload at 0x10acfb578>
+  pre_exec: <function pre_exec at 0x10acfbf50>
+  worker_tmp_dir: None
+  limit_request_fields: 100
+  pythonpath: None
+  on_exit: <function on_exit at 0x10ad007d0>
+  config: gunicorn.conf.py
+  logconfig: None
+  check_config: False
+  statsd_prefix: 
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  reload_engine: auto
+  proxy_allow_ips: ['127.0.0.1']
+  pre_request: <function pre_request at 0x10ad00140>
+  post_request: <function post_request at 0x10ad00230>
+  forwarded_allow_ips: ['127.0.0.1']
+  worker_int: <function worker_int at 0x10acfbc80>
+  raw_paste_global_conf: []
+  threads: 1
+  max_requests: 0
+  chdir: /Users/hkapoor/Desktop/DataAnalytics/sms/sms
+  daemon: False
+  user: 0
+  limit_request_line: 4094
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  certfile: None
+  on_starting: <function on_starting at 0x10acfb410>
+  post_worker_init: <function post_worker_init at 0x10acfbb18>
+  child_exit: <function child_exit at 0x10ad00398>
+  worker_exit: <function worker_exit at 0x10ad00500>
+  paste: None
+  default_proc_name: wsgi
+  syslog_addr: unix:///var/run/syslog
+  syslog_prefix: None
+  ciphers: TLSv1
+  worker_abort: <function worker_abort at 0x10acfbde8>
+  loglevel: debug
+  bind: ['127.0.0.1:9000']
+  raw_env: []
+  initgroups: False
+  capture_output: False
+  reload: False
+  limit_request_field_size: 8190
+  nworkers_changed: <function nworkers_changed at 0x10ad00668>
+  timeout: 30
+  keyfile: None
+  ca_certs: None
+  tmp_upload_dir: None
+  backlog: 2048
+  logger_class: gunicorn.glogging.Logger
+[2017-06-15 00:49:24 -0700] [24778] [INFO] Starting gunicorn 19.7.1
+[2017-06-15 00:49:24 -0700] [24778] [DEBUG] Arbiter booted
+[2017-06-15 00:49:24 -0700] [24778] [INFO] Listening at: http://127.0.0.1:9000 (24778)
+[2017-06-15 00:49:24 -0700] [24778] [INFO] Using worker: sync
+[2017-06-15 00:49:24 -0700] [24781] [INFO] Booting worker with pid: 24781
+[2017-06-15 00:49:25 -0700] [24778] [DEBUG] 1 workers
+[2017-06-15 00:49:32 -0700] [24781] [DEBUG] GET /
+[2017-06-15 00:49:48 -0700] [24781] [DEBUG] Closing connection. 
+[2017-06-15 00:49:48 -0700] [24781] [DEBUG] Closing connection. 
+[2017-06-15 00:49:48 -0700] [24781] [DEBUG] GET /
+[2017-06-15 00:50:01 -0700] [24781] [DEBUG] POST /
+[2017-06-15 00:50:01 -0700] [24781] [DEBUG] GET /dashboard
+[2017-06-15 00:50:02 -0700] [24781] [DEBUG] GET /favicon.ico
+[2017-06-15 00:50:26 -0700] [24778] [INFO] Handling signal: int
+[2017-06-15 00:50:26 -0700] [24781] [INFO] Worker exiting (pid: 24781)
+[2017-06-15 00:50:26 -0700] [24778] [INFO] Shutting down: Master
+[2017-06-15 19:15:43 -0700] [24980] [DEBUG] Current configuration:
+  proxy_protocol: False
+  worker_connections: 1000
+  statsd_host: None
+  max_requests_jitter: 0
+  post_fork: <function post_fork at 0x1032c99b0>
+  errorlog: /Users/hkapoor/Desktop/DataAnalytics/sms/sms/logs/gunicorn-error.log
+  enable_stdio_inheritance: False
+  worker_class: sync
+  ssl_version: 2
+  suppress_ragged_eofs: True
+  syslog: False
+  syslog_facility: user
+  when_ready: <function when_ready at 0x1032c96e0>
+  pre_fork: <function pre_fork at 0x1032c9848>
+  cert_reqs: 0
+  preload_app: False
+  keepalive: 2
+  accesslog: /Users/hkapoor/Desktop/DataAnalytics/sms/sms/logs/gunicorn-access.log
+  group: 0
+  graceful_timeout: 30
+  do_handshake_on_connect: False
+  spew: False
+  workers: 1
+  proc_name: None
+  sendfile: None
+  pidfile: None
+  umask: 0
+  on_reload: <function on_reload at 0x1032c9578>
+  pre_exec: <function pre_exec at 0x1032c9f50>
+  worker_tmp_dir: None
+  limit_request_fields: 100
+  pythonpath: None
+  on_exit: <function on_exit at 0x1032ce7d0>
+  config: gunicorn.conf.py
+  logconfig: None
+  check_config: False
+  statsd_prefix: 
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  reload_engine: auto
+  proxy_allow_ips: ['127.0.0.1']
+  pre_request: <function pre_request at 0x1032ce140>
+  post_request: <function post_request at 0x1032ce230>
+  forwarded_allow_ips: ['127.0.0.1']
+  worker_int: <function worker_int at 0x1032c9c80>
+  raw_paste_global_conf: []
+  threads: 1
+  max_requests: 0
+  chdir: /Users/hkapoor/Desktop/DataAnalytics/sms/sms
+  daemon: False
+  user: 0
+  limit_request_line: 4094
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  certfile: None
+  on_starting: <function on_starting at 0x1032c9410>
+  post_worker_init: <function post_worker_init at 0x1032c9b18>
+  child_exit: <function child_exit at 0x1032ce398>
+  worker_exit: <function worker_exit at 0x1032ce500>
+  paste: None
+  default_proc_name: wsgi.py
+  syslog_addr: unix:///var/run/syslog
+  syslog_prefix: None
+  ciphers: TLSv1
+  worker_abort: <function worker_abort at 0x1032c9de8>
+  loglevel: debug
+  bind: ['127.0.0.1:9000']
+  raw_env: []
+  initgroups: False
+  capture_output: False
+  reload: False
+  limit_request_field_size: 8190
+  nworkers_changed: <function nworkers_changed at 0x1032ce668>
+  timeout: 30
+  keyfile: None
+  ca_certs: None
+  tmp_upload_dir: None
+  backlog: 2048
+  logger_class: gunicorn.glogging.Logger
+[2017-06-15 19:15:43 -0700] [24980] [INFO] Starting gunicorn 19.7.1
+[2017-06-15 19:15:43 -0700] [24980] [DEBUG] Arbiter booted
+[2017-06-15 19:15:43 -0700] [24980] [INFO] Listening at: http://127.0.0.1:9000 (24980)
+[2017-06-15 19:15:43 -0700] [24980] [INFO] Using worker: sync
+[2017-06-15 19:15:43 -0700] [24983] [INFO] Booting worker with pid: 24983
+[2017-06-15 19:15:43 -0700] [24980] [DEBUG] 1 workers
+[2017-06-15 19:15:44 -0700] [24983] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/Users/hkapoor/Desktop/DataAnalytics/sms/sms/py27env/lib/python2.7/site-packages/gunicorn/arbiter.py", line 578, in spawn_worker
+    worker.init_process()
+  File "/Users/hkapoor/Desktop/DataAnalytics/sms/sms/py27env/lib/python2.7/site-packages/gunicorn/workers/base.py", line 126, in init_process
+    self.load_wsgi()
+  File "/Users/hkapoor/Desktop/DataAnalytics/sms/sms/py27env/lib/python2.7/site-packages/gunicorn/workers/base.py", line 135, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/Users/hkapoor/Desktop/DataAnalytics/sms/sms/py27env/lib/python2.7/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/Users/hkapoor/Desktop/DataAnalytics/sms/sms/py27env/lib/python2.7/site-packages/gunicorn/app/wsgiapp.py", line 65, in load
+    return self.load_wsgiapp()
+  File "/Users/hkapoor/Desktop/DataAnalytics/sms/sms/py27env/lib/python2.7/site-packages/gunicorn/app/wsgiapp.py", line 52, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/Users/hkapoor/Desktop/DataAnalytics/sms/sms/py27env/lib/python2.7/site-packages/gunicorn/util.py", line 356, in import_app
+    raise ImportError(msg % (module.rsplit(".", 1)[0], obj))
+ImportError: Failed to find application, did you mean 'wsgi:application'?
+[2017-06-15 19:15:44 -0700] [24983] [INFO] Worker exiting (pid: 24983)
+[2017-06-15 19:15:44 -0700] [24980] [INFO] Shutting down: Master
+[2017-06-15 19:15:44 -0700] [24980] [INFO] Reason: Worker failed to boot.
+[2017-06-15 19:15:49 -0700] [24985] [DEBUG] Current configuration:
+  proxy_protocol: False
+  worker_connections: 1000
+  statsd_host: None
+  max_requests_jitter: 0
+  post_fork: <function post_fork at 0x1041659b0>
+  errorlog: /Users/hkapoor/Desktop/DataAnalytics/sms/sms/logs/gunicorn-error.log
+  enable_stdio_inheritance: False
+  worker_class: sync
+  ssl_version: 2
+  suppress_ragged_eofs: True
+  syslog: False
+  syslog_facility: user
+  when_ready: <function when_ready at 0x1041656e0>
+  pre_fork: <function pre_fork at 0x104165848>
+  cert_reqs: 0
+  preload_app: False
+  keepalive: 2
+  accesslog: /Users/hkapoor/Desktop/DataAnalytics/sms/sms/logs/gunicorn-access.log
+  group: 0
+  graceful_timeout: 30
+  do_handshake_on_connect: False
+  spew: False
+  workers: 1
+  proc_name: None
+  sendfile: None
+  pidfile: None
+  umask: 0
+  on_reload: <function on_reload at 0x104165578>
+  pre_exec: <function pre_exec at 0x104165f50>
+  worker_tmp_dir: None
+  limit_request_fields: 100
+  pythonpath: None
+  on_exit: <function on_exit at 0x10416a7d0>
+  config: gunicorn.conf.py
+  logconfig: None
+  check_config: False
+  statsd_prefix: 
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  reload_engine: auto
+  proxy_allow_ips: ['127.0.0.1']
+  pre_request: <function pre_request at 0x10416a140>
+  post_request: <function post_request at 0x10416a230>
+  forwarded_allow_ips: ['127.0.0.1']
+  worker_int: <function worker_int at 0x104165c80>
+  raw_paste_global_conf: []
+  threads: 1
+  max_requests: 0
+  chdir: /Users/hkapoor/Desktop/DataAnalytics/sms/sms
+  daemon: False
+  user: 0
+  limit_request_line: 4094
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  certfile: None
+  on_starting: <function on_starting at 0x104165410>
+  post_worker_init: <function post_worker_init at 0x104165b18>
+  child_exit: <function child_exit at 0x10416a398>
+  worker_exit: <function worker_exit at 0x10416a500>
+  paste: None
+  default_proc_name: wsgi.py
+  syslog_addr: unix:///var/run/syslog
+  syslog_prefix: None
+  ciphers: TLSv1
+  worker_abort: <function worker_abort at 0x104165de8>
+  loglevel: debug
+  bind: ['127.0.0.1:9000']
+  raw_env: []
+  initgroups: False
+  capture_output: False
+  reload: False
+  limit_request_field_size: 8190
+  nworkers_changed: <function nworkers_changed at 0x10416a668>
+  timeout: 30
+  keyfile: None
+  ca_certs: None
+  tmp_upload_dir: None
+  backlog: 2048
+  logger_class: gunicorn.glogging.Logger
+[2017-06-15 19:15:49 -0700] [24985] [INFO] Starting gunicorn 19.7.1
+[2017-06-15 19:15:49 -0700] [24985] [DEBUG] Arbiter booted
+[2017-06-15 19:15:49 -0700] [24985] [INFO] Listening at: http://127.0.0.1:9000 (24985)
+[2017-06-15 19:15:49 -0700] [24985] [INFO] Using worker: sync
+[2017-06-15 19:15:49 -0700] [24988] [INFO] Booting worker with pid: 24988
+[2017-06-15 19:15:49 -0700] [24985] [DEBUG] 1 workers
+[2017-06-15 19:15:49 -0700] [24988] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/Users/hkapoor/Desktop/DataAnalytics/sms/sms/py27env/lib/python2.7/site-packages/gunicorn/arbiter.py", line 578, in spawn_worker
+    worker.init_process()
+  File "/Users/hkapoor/Desktop/DataAnalytics/sms/sms/py27env/lib/python2.7/site-packages/gunicorn/workers/base.py", line 126, in init_process
+    self.load_wsgi()
+  File "/Users/hkapoor/Desktop/DataAnalytics/sms/sms/py27env/lib/python2.7/site-packages/gunicorn/workers/base.py", line 135, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/Users/hkapoor/Desktop/DataAnalytics/sms/sms/py27env/lib/python2.7/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/Users/hkapoor/Desktop/DataAnalytics/sms/sms/py27env/lib/python2.7/site-packages/gunicorn/app/wsgiapp.py", line 65, in load
+    return self.load_wsgiapp()
+  File "/Users/hkapoor/Desktop/DataAnalytics/sms/sms/py27env/lib/python2.7/site-packages/gunicorn/app/wsgiapp.py", line 52, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/Users/hkapoor/Desktop/DataAnalytics/sms/sms/py27env/lib/python2.7/site-packages/gunicorn/util.py", line 356, in import_app
+    raise ImportError(msg % (module.rsplit(".", 1)[0], obj))
+ImportError: Failed to find application, did you mean 'wsgi:application'?
+[2017-06-15 19:15:49 -0700] [24988] [INFO] Worker exiting (pid: 24988)
+[2017-06-15 19:15:49 -0700] [24985] [INFO] Shutting down: Master
+[2017-06-15 19:15:49 -0700] [24985] [INFO] Reason: Worker failed to boot.
+[2017-06-15 19:16:06 -0700] [24991] [DEBUG] Current configuration:
+  proxy_protocol: False
+  worker_connections: 1000
+  statsd_host: None
+  max_requests_jitter: 0
+  post_fork: <function post_fork at 0x1011969b0>
+  errorlog: /Users/hkapoor/Desktop/DataAnalytics/sms/sms/logs/gunicorn-error.log
+  enable_stdio_inheritance: False
+  worker_class: sync
+  ssl_version: 2
+  suppress_ragged_eofs: True
+  syslog: False
+  syslog_facility: user
+  when_ready: <function when_ready at 0x1011966e0>
+  pre_fork: <function pre_fork at 0x101196848>
+  cert_reqs: 0
+  preload_app: False
+  keepalive: 2
+  accesslog: /Users/hkapoor/Desktop/DataAnalytics/sms/sms/logs/gunicorn-access.log
+  group: 0
+  graceful_timeout: 30
+  do_handshake_on_connect: False
+  spew: False
+  workers: 1
+  proc_name: None
+  sendfile: None
+  pidfile: None
+  umask: 0
+  on_reload: <function on_reload at 0x101196578>
+  pre_exec: <function pre_exec at 0x101196f50>
+  worker_tmp_dir: None
+  limit_request_fields: 100
+  pythonpath: None
+  on_exit: <function on_exit at 0x10119b7d0>
+  config: gunicorn.conf.py
+  logconfig: None
+  check_config: False
+  statsd_prefix: 
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  reload_engine: auto
+  proxy_allow_ips: ['127.0.0.1']
+  pre_request: <function pre_request at 0x10119b140>
+  post_request: <function post_request at 0x10119b230>
+  forwarded_allow_ips: ['127.0.0.1']
+  worker_int: <function worker_int at 0x101196c80>
+  raw_paste_global_conf: []
+  threads: 1
+  max_requests: 0
+  chdir: /Users/hkapoor/Desktop/DataAnalytics/sms/sms
+  daemon: False
+  user: 0
+  limit_request_line: 4094
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  certfile: None
+  on_starting: <function on_starting at 0x101196410>
+  post_worker_init: <function post_worker_init at 0x101196b18>
+  child_exit: <function child_exit at 0x10119b398>
+  worker_exit: <function worker_exit at 0x10119b500>
+  paste: None
+  default_proc_name: wsgi:application
+  syslog_addr: unix:///var/run/syslog
+  syslog_prefix: None
+  ciphers: TLSv1
+  worker_abort: <function worker_abort at 0x101196de8>
+  loglevel: debug
+  bind: ['127.0.0.1:9000']
+  raw_env: []
+  initgroups: False
+  capture_output: False
+  reload: False
+  limit_request_field_size: 8190
+  nworkers_changed: <function nworkers_changed at 0x10119b668>
+  timeout: 30
+  keyfile: None
+  ca_certs: None
+  tmp_upload_dir: None
+  backlog: 2048
+  logger_class: gunicorn.glogging.Logger
+[2017-06-15 19:16:06 -0700] [24991] [INFO] Starting gunicorn 19.7.1
+[2017-06-15 19:16:06 -0700] [24991] [DEBUG] Arbiter booted
+[2017-06-15 19:16:06 -0700] [24991] [INFO] Listening at: http://127.0.0.1:9000 (24991)
+[2017-06-15 19:16:06 -0700] [24991] [INFO] Using worker: sync
+[2017-06-15 19:16:06 -0700] [24994] [INFO] Booting worker with pid: 24994
+[2017-06-15 19:16:06 -0700] [24991] [DEBUG] 1 workers
+[2017-06-15 19:16:10 -0700] [24994] [DEBUG] GET /
+[2017-06-15 19:16:10 -0700] [24994] [DEBUG] GET /static/css/bootstrap.min.css
+[2017-06-15 19:16:10 -0700] [24994] [DEBUG] GET /static/css/light-bootstrap-dashboard.css
+[2017-06-15 19:16:10 -0700] [24994] [DEBUG] GET /static/css/pe-icon-7-stroke.css
+[2017-06-15 19:16:10 -0700] [24994] [DEBUG] GET /static/js/jquery.min.js
+[2017-06-15 19:16:10 -0700] [24994] [DEBUG] GET /static/js/jquery-ui.min.js
+[2017-06-15 19:16:10 -0700] [24994] [DEBUG] GET /static/js/bootstrap.min.js
+[2017-06-15 19:16:10 -0700] [24994] [DEBUG] GET /static/js/jquery.validate.min.js
+[2017-06-15 19:16:10 -0700] [24994] [DEBUG] GET /static/js/chartist.min.js
+[2017-06-15 19:16:10 -0700] [24994] [DEBUG] GET /static/js/bootstrap-datetimepicker.js
+[2017-06-15 19:16:10 -0700] [24994] [DEBUG] GET /static/js/bootstrap-checkbox-radio-switch-tags.js
+[2017-06-15 19:16:10 -0700] [24994] [DEBUG] GET /static/js/moment.min.js
+[2017-06-15 19:16:10 -0700] [24994] [DEBUG] GET /static/js/bootstrap-notify.js
+[2017-06-15 19:16:10 -0700] [24994] [DEBUG] GET /static/js/sweetalert2.js
+[2017-06-15 19:16:10 -0700] [24994] [DEBUG] GET /static/js/bootstrap-selectpicker.js
+[2017-06-15 19:16:10 -0700] [24994] [DEBUG] GET /static/js/jquery-jvectormap.js
+[2017-06-15 19:16:10 -0700] [24994] [DEBUG] GET /static/js/jquery.bootstrap.wizard.min.js
+[2017-06-15 19:16:10 -0700] [24994] [DEBUG] GET /static/js/bootstrap-table.js
+[2017-06-15 19:16:10 -0700] [24994] [DEBUG] GET /static/js/fullcalendar.min.js
+[2017-06-15 19:16:10 -0700] [24994] [DEBUG] GET /static/js/light-bootstrap-dashboard.js
+[2017-06-15 19:16:11 -0700] [24994] [DEBUG] GET /static/img/full-screen-image-1.jpg
+[2017-06-15 19:16:16 -0700] [24991] [INFO] Handling signal: int
+[2017-06-15 19:16:16 -0700] [24994] [INFO] Worker exiting (pid: 24994)
+[2017-06-15 19:16:16 -0700] [24991] [INFO] Shutting down: Master
+[2017-06-15 19:16:21 -0700] [24998] [DEBUG] Current configuration:
+  proxy_protocol: False
+  worker_connections: 1000
+  statsd_host: None
+  max_requests_jitter: 0
+  post_fork: <function post_fork at 0x10cad39b0>
+  errorlog: /Users/hkapoor/Desktop/DataAnalytics/sms/sms/logs/gunicorn-error.log
+  enable_stdio_inheritance: False
+  worker_class: sync
+  ssl_version: 2
+  suppress_ragged_eofs: True
+  syslog: False
+  syslog_facility: user
+  when_ready: <function when_ready at 0x10cad36e0>
+  pre_fork: <function pre_fork at 0x10cad3848>
+  cert_reqs: 0
+  preload_app: False
+  keepalive: 2
+  accesslog: /Users/hkapoor/Desktop/DataAnalytics/sms/sms/logs/gunicorn-access.log
+  group: 0
+  graceful_timeout: 30
+  do_handshake_on_connect: False
+  spew: False
+  workers: 1
+  proc_name: None
+  sendfile: None
+  pidfile: None
+  umask: 0
+  on_reload: <function on_reload at 0x10cad3578>
+  pre_exec: <function pre_exec at 0x10cad3f50>
+  worker_tmp_dir: None
+  limit_request_fields: 100
+  pythonpath: None
+  on_exit: <function on_exit at 0x10cad87d0>
+  config: gunicorn.conf.py
+  logconfig: None
+  check_config: False
+  statsd_prefix: 
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  reload_engine: auto
+  proxy_allow_ips: ['127.0.0.1']
+  pre_request: <function pre_request at 0x10cad8140>
+  post_request: <function post_request at 0x10cad8230>
+  forwarded_allow_ips: ['127.0.0.1']
+  worker_int: <function worker_int at 0x10cad3c80>
+  raw_paste_global_conf: []
+  threads: 1
+  max_requests: 0
+  chdir: /Users/hkapoor/Desktop/DataAnalytics/sms/sms
+  daemon: True
+  user: 0
+  limit_request_line: 4094
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  certfile: None
+  on_starting: <function on_starting at 0x10cad3410>
+  post_worker_init: <function post_worker_init at 0x10cad3b18>
+  child_exit: <function child_exit at 0x10cad8398>
+  worker_exit: <function worker_exit at 0x10cad8500>
+  paste: None
+  default_proc_name: wsgi:application
+  syslog_addr: unix:///var/run/syslog
+  syslog_prefix: None
+  ciphers: TLSv1
+  worker_abort: <function worker_abort at 0x10cad3de8>
+  loglevel: debug
+  bind: ['127.0.0.1:9000']
+  raw_env: []
+  initgroups: False
+  capture_output: False
+  reload: False
+  limit_request_field_size: 8190
+  nworkers_changed: <function nworkers_changed at 0x10cad8668>
+  timeout: 30
+  keyfile: None
+  ca_certs: None
+  tmp_upload_dir: None
+  backlog: 2048
+  logger_class: gunicorn.glogging.Logger
+[2017-06-15 19:16:21 -0700] [24998] [INFO] Starting gunicorn 19.7.1
+[2017-06-15 19:16:21 -0700] [24998] [DEBUG] Arbiter booted
+[2017-06-15 19:16:21 -0700] [24998] [INFO] Listening at: http://127.0.0.1:9000 (24998)
+[2017-06-15 19:16:21 -0700] [24998] [INFO] Using worker: sync
+[2017-06-15 19:16:21 -0700] [25001] [INFO] Booting worker with pid: 25001
+[2017-06-15 19:16:21 -0700] [24998] [DEBUG] 1 workers
+[2017-06-15 19:16:24 -0700] [25001] [DEBUG] GET /
+[2017-06-15 19:16:46 -0700] [25001] [DEBUG] Closing connection. 
+[2017-06-15 19:16:46 -0700] [25001] [DEBUG] Closing connection. 
+[2017-06-15 19:16:46 -0700] [25001] [DEBUG] Closing connection. 
+[2017-06-15 19:16:46 -0700] [25001] [DEBUG] Closing connection. 
+[2017-06-15 19:16:46 -0700] [25001] [DEBUG] Closing connection. 
+[2017-06-15 19:17:35 -0700] [25011] [INFO] Booting worker with pid: 25011

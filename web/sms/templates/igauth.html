@@ -1,0 +1,51 @@
+﻿<!-- extend from base layout -->
+{% extends "base.html" %}
+
+{% block content %}
+
+
+{% with messages = get_flashed_messages() %}
+    {% if messages %}
+<ul class=flashes>
+    {% for message in messages %}
+    <li>{{ message }}</li>
+    {% endfor %}
+</ul>
+    {% endif %}
+{% endwith %}
+
+
+<form method="POST" enctype="multipart/form-data" action="/sga" class="form-labels-on-top">
+    <div class="form-title-row">
+        <h1>Setup a Giveaway</h1>
+    </div>
+    <div class="form-row">
+        <label>
+            <span>Upload Image</span>
+            {{ form.csrf_token }}
+            {{ form.gaphoto }}
+        </label>
+    </div>
+    <div class="form-row">
+        <label>
+            <span>Title of GA</span>
+            {{ form.gatitle }}
+        </label>
+    </div>
+    <div class="form-row">
+        <label>
+            <span>Type of GA</span>
+            {{ form.gatype }}
+        </label>
+    </div>
+    <div class="form-row">
+        <label>
+            <span>Describe GA</span>
+            {{ form.gadescription }}
+        </label>
+    </div>
+    <div class="form-row">
+        <input type="submit" value="Submit">
+    </div>
+</form>
+{% endblock %}
