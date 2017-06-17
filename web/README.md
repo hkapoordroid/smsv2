@@ -1,0 +1,1 @@
+"ShareMyStyle" application code. 

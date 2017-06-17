@@ -1,0 +1,349 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>1368dbad-5c28-484e-8185-edab40943230</ProjectGuid>
+    <ProjectHome>.</ProjectHome>
+    <ProjectTypeGuids>{789894c7-04a9-4a11-a6b5-3f4435165112};{1b580a1a-fdb3-4b32-83e1-6407eb2722e6};{349c5851-65df-11da-9384-00065b846f21};{888888a0-9f3d-457c-b088-3a5042f75d52}</ProjectTypeGuids>
+    <StartupFile>sms\awshelper.py</StartupFile>
+    <SearchPath>
+    </SearchPath>
+    <WorkingDirectory>.</WorkingDirectory>
+    <LaunchProvider>Web launcher</LaunchProvider>
+    <OutputPath>.</OutputPath>
+    <StaticUriPattern>^/static/.*</StaticUriPattern>
+    <StaticUriRewrite>^/$(MSBuildProjectName)/static/.*</StaticUriRewrite>
+    <PythonWsgiHandler>$(MSBuildProjectName).app</PythonWsgiHandler>
+    <Name>sms</Name>
+    <RootNamespace>sms</RootNamespace>
+    <InterpreterId>{2ef7528d-819d-46b9-a3fb-d252f7472b1f}</InterpreterId>
+    <InterpreterVersion>2.7</InterpreterVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="runserver.py" />
+    <Compile Include="sms\awshelper.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sms\config.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sms\DataCollectors\contestschedulers.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sms\DataCollectors\datacollectors.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sms\igauth.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sms\model\user.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sms\model\__init__.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sms\__init__.py" />
+    <Compile Include="sms\views.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="sms\" />
+    <Folder Include="instance\" />
+    <Folder Include="sms\model\" />
+    <Folder Include="sms\DataCollectors\" />
+    <Folder Include="sms\static\" />
+    <Folder Include="sms\static\css\" />
+    <Folder Include="sms\static\fonts\" />
+    <Folder Include="sms\static\img\" />
+    <Folder Include="sms\static\img\faces\" />
+    <Folder Include="sms\static\img\flags\" />
+    <Folder Include="sms\static\js\" />
+    <Folder Include="sms\static\sass\" />
+    <Folder Include="sms\static\sass\lbd\" />
+    <Folder Include="sms\static\sass\lbd\mixins\" />
+    <Folder Include="sms\static\sass\lbd\plugins\" />
+    <Folder Include="sms\templates\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="requirements.txt" />
+    <Content Include="instance\flask.cfg" />
+    <Content Include="sms\static\.DS_Store" />
+    <Content Include="sms\static\css\.DS_Store" />
+    <Content Include="sms\static\css\bootstrap.min.css" />
+    <Content Include="sms\static\css\demo.css" />
+    <Content Include="sms\static\css\light-bootstrap-dashboard.css" />
+    <Content Include="sms\static\css\pe-icon-7-stroke.css" />
+    <Content Include="sms\static\fonts\.DS_Store" />
+    <Content Include="sms\static\fonts\Pe-icon-7-stroke.eot" />
+    <Content Include="sms\static\fonts\Pe-icon-7-stroke.svg" />
+    <Content Include="sms\static\fonts\Pe-icon-7-stroke.ttf" />
+    <Content Include="sms\static\fonts\Pe-icon-7-stroke.woff" />
+    <Content Include="sms\static\img\.DS_Store" />
+    <Content Include="sms\static\img\blog-1.jpg" />
+    <Content Include="sms\static\img\blog-2.jpg" />
+    <Content Include="sms\static\img\blog-3.jpg" />
+    <Content Include="sms\static\img\blog-4.jpg" />
+    <Content Include="sms\static\img\blog-5.jpg" />
+    <Content Include="sms\static\img\carousel_1.jpg" />
+    <Content Include="sms\static\img\carousel_2.jpg" />
+    <Content Include="sms\static\img\carousel_3.jpg" />
+    <Content Include="sms\static\img\default-avatar.png" />
+    <Content Include="sms\static\img\faces\face-0.jpg" />
+    <Content Include="sms\static\img\faces\face-1.jpg" />
+    <Content Include="sms\static\img\faces\face-2.jpg" />
+    <Content Include="sms\static\img\faces\face-3.jpg" />
+    <Content Include="sms\static\img\faces\face-4.jpg" />
+    <Content Include="sms\static\img\faces\face-5.jpg" />
+    <Content Include="sms\static\img\faces\face-6.jpg" />
+    <Content Include="sms\static\img\faces\face-7.jpg" />
+    <Content Include="sms\static\img\faces\tim_vector.jpe" />
+    <Content Include="sms\static\img\favicon.ico" />
+    <Content Include="sms\static\img\flags\AD.png" />
+    <Content Include="sms\static\img\flags\AE.png" />
+    <Content Include="sms\static\img\flags\AG.png" />
+    <Content Include="sms\static\img\flags\AM.png" />
+    <Content Include="sms\static\img\flags\AR.png" />
+    <Content Include="sms\static\img\flags\AT.png" />
+    <Content Include="sms\static\img\flags\AU.png" />
+    <Content Include="sms\static\img\flags\BE.png" />
+    <Content Include="sms\static\img\flags\BF.png" />
+    <Content Include="sms\static\img\flags\BG.png" />
+    <Content Include="sms\static\img\flags\BO.png" />
+    <Content Include="sms\static\img\flags\BR.png" />
+    <Content Include="sms\static\img\flags\CA.png" />
+    <Content Include="sms\static\img\flags\CD.png" />
+    <Content Include="sms\static\img\flags\CG.png" />
+    <Content Include="sms\static\img\flags\CH.png" />
+    <Content Include="sms\static\img\flags\CL.png" />
+    <Content Include="sms\static\img\flags\CM.png" />
+    <Content Include="sms\static\img\flags\CN.png" />
+    <Content Include="sms\static\img\flags\CO.png" />
+    <Content Include="sms\static\img\flags\CZ.png" />
+    <Content Include="sms\static\img\flags\DE.png" />
+    <Content Include="sms\static\img\flags\DJ.png" />
+    <Content Include="sms\static\img\flags\DK.png" />
+    <Content Include="sms\static\img\flags\DZ.png" />
+    <Content Include="sms\static\img\flags\EE.png" />
+    <Content Include="sms\static\img\flags\EG.png" />
+    <Content Include="sms\static\img\flags\ES.png" />
+    <Content Include="sms\static\img\flags\FI.png" />
+    <Content Include="sms\static\img\flags\FR.png" />
+    <Content Include="sms\static\img\flags\GA.png" />
+    <Content Include="sms\static\img\flags\GB.png" />
+    <Content Include="sms\static\img\flags\GM.png" />
+    <Content Include="sms\static\img\flags\GT.png" />
+    <Content Include="sms\static\img\flags\HN.png" />
+    <Content Include="sms\static\img\flags\HT.png" />
+    <Content Include="sms\static\img\flags\HU.png" />
+    <Content Include="sms\static\img\flags\ID.png" />
+    <Content Include="sms\static\img\flags\IE.png" />
+    <Content Include="sms\static\img\flags\IL.png" />
+    <Content Include="sms\static\img\flags\IN.png" />
+    <Content Include="sms\static\img\flags\IQ.png" />
+    <Content Include="sms\static\img\flags\IR.png" />
+    <Content Include="sms\static\img\flags\IT.png" />
+    <Content Include="sms\static\img\flags\JM.png" />
+    <Content Include="sms\static\img\flags\JO.png" />
+    <Content Include="sms\static\img\flags\JP.png" />
+    <Content Include="sms\static\img\flags\KG.png" />
+    <Content Include="sms\static\img\flags\KN.png" />
+    <Content Include="sms\static\img\flags\KP.png" />
+    <Content Include="sms\static\img\flags\KR.png" />
+    <Content Include="sms\static\img\flags\KW.png" />
+    <Content Include="sms\static\img\flags\KZ.png" />
+    <Content Include="sms\static\img\flags\LA.png" />
+    <Content Include="sms\static\img\flags\LB.png" />
+    <Content Include="sms\static\img\flags\LC.png" />
+    <Content Include="sms\static\img\flags\LS.png" />
+    <Content Include="sms\static\img\flags\LU.png" />
+    <Content Include="sms\static\img\flags\LV.png" />
+    <Content Include="sms\static\img\flags\MG.png" />
+    <Content Include="sms\static\img\flags\MK.png" />
+    <Content Include="sms\static\img\flags\ML.png" />
+    <Content Include="sms\static\img\flags\MM.png" />
+    <Content Include="sms\static\img\flags\MT.png" />
+    <Content Include="sms\static\img\flags\MX.png" />
+    <Content Include="sms\static\img\flags\NA.png" />
+    <Content Include="sms\static\img\flags\NE.png" />
+    <Content Include="sms\static\img\flags\NG.png" />
+    <Content Include="sms\static\img\flags\NI.png" />
+    <Content Include="sms\static\img\flags\NL.png" />
+    <Content Include="sms\static\img\flags\NO.png" />
+    <Content Include="sms\static\img\flags\OM.png" />
+    <Content Include="sms\static\img\flags\PA.png" />
+    <Content Include="sms\static\img\flags\PE.png" />
+    <Content Include="sms\static\img\flags\PG.png" />
+    <Content Include="sms\static\img\flags\PK.png" />
+    <Content Include="sms\static\img\flags\PL.png" />
+    <Content Include="sms\static\img\flags\PT.png" />
+    <Content Include="sms\static\img\flags\PY.png" />
+    <Content Include="sms\static\img\flags\QA.png" />
+    <Content Include="sms\static\img\flags\RO.png" />
+    <Content Include="sms\static\img\flags\RU.png" />
+    <Content Include="sms\static\img\flags\RW.png" />
+    <Content Include="sms\static\img\flags\SA.png" />
+    <Content Include="sms\static\img\flags\SE.png" />
+    <Content Include="sms\static\img\flags\SG.png" />
+    <Content Include="sms\static\img\flags\SL.png" />
+    <Content Include="sms\static\img\flags\SN.png" />
+    <Content Include="sms\static\img\flags\SO.png" />
+    <Content Include="sms\static\img\flags\SV.png" />
+    <Content Include="sms\static\img\flags\TD.png" />
+    <Content Include="sms\static\img\flags\TJ.png" />
+    <Content Include="sms\static\img\flags\TL.png" />
+    <Content Include="sms\static\img\flags\TR.png" />
+    <Content Include="sms\static\img\flags\TZ.png" />
+    <Content Include="sms\static\img\flags\UA.png" />
+    <Content Include="sms\static\img\flags\US.png" />
+    <Content Include="sms\static\img\flags\VE.png" />
+    <Content Include="sms\static\img\flags\VN.png" />
+    <Content Include="sms\static\img\flags\YE.png" />
+    <Content Include="sms\static\img\full-screen-image-1.jpg" />
+    <Content Include="sms\static\img\full-screen-image-2.jpg" />
+    <Content Include="sms\static\img\full-screen-image-3.jpg" />
+    <Content Include="sms\static\img\full-screen-image-4.jpg" />
+    <Content Include="sms\static\img\loading-bubbles.svg" />
+    <Content Include="sms\static\img\mask.png" />
+    <Content Include="sms\static\img\new_logo.png" />
+    <Content Include="sms\static\js\.DS_Store" />
+    <Content Include="sms\static\js\bootstrap-checkbox-radio-switch-tags.js" />
+    <Content Include="sms\static\js\bootstrap-datetimepicker.js" />
+    <Content Include="sms\static\js\bootstrap-notify.js" />
+    <Content Include="sms\static\js\bootstrap-selectpicker.js" />
+    <Content Include="sms\static\js\bootstrap-table.js" />
+    <Content Include="sms\static\js\bootstrap.min.js" />
+    <Content Include="sms\static\js\chartist.min.js" />
+    <Content Include="sms\static\js\demo.js" />
+    <Content Include="sms\static\js\fullcalendar.min.js" />
+    <Content Include="sms\static\js\jquery-jvectormap.js" />
+    <Content Include="sms\static\js\jquery-ui.min.js" />
+    <Content Include="sms\static\js\jquery.bootstrap.wizard.min.js" />
+    <Content Include="sms\static\js\jquery.datatables.js" />
+    <Content Include="sms\static\js\jquery.min.js" />
+    <Content Include="sms\static\js\jquery.validate.min.js" />
+    <Content Include="sms\static\js\light-bootstrap-dashboard.js" />
+    <Content Include="sms\static\js\moment.min.js" />
+    <Content Include="sms\static\js\sweetalert2.js" />
+    <Content Include="sms\static\sass\lbd\mixins\_buttons.scss" />
+    <Content Include="sms\static\sass\lbd\mixins\_cards.scss" />
+    <Content Include="sms\static\sass\lbd\mixins\_chartist.scss" />
+    <Content Include="sms\static\sass\lbd\mixins\_icons.scss" />
+    <Content Include="sms\static\sass\lbd\mixins\_inputs.scss" />
+    <Content Include="sms\static\sass\lbd\mixins\_labels.scss" />
+    <Content Include="sms\static\sass\lbd\mixins\_morphing-buttons.scss" />
+    <Content Include="sms\static\sass\lbd\mixins\_navbars.scss" />
+    <Content Include="sms\static\sass\lbd\mixins\_social-buttons.scss" />
+    <Content Include="sms\static\sass\lbd\mixins\_table-row.scss" />
+    <Content Include="sms\static\sass\lbd\mixins\_tabs.scss" />
+    <Content Include="sms\static\sass\lbd\mixins\_transparency.scss" />
+    <Content Include="sms\static\sass\lbd\mixins\_vendor-prefixes.scss" />
+    <Content Include="sms\static\sass\lbd\plugins\_animate.scss" />
+    <Content Include="sms\static\sass\lbd\plugins\_bootstrap-select.scss" />
+    <Content Include="sms\static\sass\lbd\plugins\_bootstrap-table.scss" />
+    <Content Include="sms\static\sass\lbd\plugins\_chartist.scss" />
+    <Content Include="sms\static\sass\lbd\plugins\_datatables.net.scss" />
+    <Content Include="sms\static\sass\lbd\plugins\_datetime-picker.scss" />
+    <Content Include="sms\static\sass\lbd\plugins\_fullcalendar.scss" />
+    <Content Include="sms\static\sass\lbd\plugins\_jquery.jvectormap.scss" />
+    <Content Include="sms\static\sass\lbd\plugins\_perfect-scrollbar.scss" />
+    <Content Include="sms\static\sass\lbd\plugins\_sweetalert2.scss" />
+    <Content Include="sms\static\sass\lbd\_alerts.scss" />
+    <Content Include="sms\static\sass\lbd\_buttons.scss" />
+    <Content Include="sms\static\sass\lbd\_cards.scss" />
+    <Content Include="sms\static\sass\lbd\_carousel.scss" />
+    <Content Include="sms\static\sass\lbd\_checkbox-radio-switch.scss" />
+    <Content Include="sms\static\sass\lbd\_collapse.scss" />
+    <Content Include="sms\static\sass\lbd\_dropdown.scss" />
+    <Content Include="sms\static\sass\lbd\_footers.scss" />
+    <Content Include="sms\static\sass\lbd\_forms.scss" />
+    <Content Include="sms\static\sass\lbd\_inputs.scss" />
+    <Content Include="sms\static\sass\lbd\_labels.scss" />
+    <Content Include="sms\static\sass\lbd\_media.scss" />
+    <Content Include="sms\static\sass\lbd\_misc.scss" />
+    <Content Include="sms\static\sass\lbd\_mixins.scss" />
+    <Content Include="sms\static\sass\lbd\_modal.scss" />
+    <Content Include="sms\static\sass\lbd\_navbars.scss" />
+    <Content Include="sms\static\sass\lbd\_pages.scss" />
+    <Content Include="sms\static\sass\lbd\_progress-bars.scss" />
+    <Content Include="sms\static\sass\lbd\_responsive.scss" />
+    <Content Include="sms\static\sass\lbd\_sidebar-and-main-panel.scss" />
+    <Content Include="sms\static\sass\lbd\_sliders.scss" />
+    <Content Include="sms\static\sass\lbd\_social-buttons.scss" />
+    <Content Include="sms\static\sass\lbd\_tables.scss" />
+    <Content Include="sms\static\sass\lbd\_tabs-navs-pagination.scss" />
+    <Content Include="sms\static\sass\lbd\_tags.scss" />
+    <Content Include="sms\static\sass\lbd\_tooltips-and-popovers.scss" />
+    <Content Include="sms\static\sass\lbd\_typography.scss" />
+    <Content Include="sms\static\sass\lbd\_variables.scss" />
+    <Content Include="sms\static\sass\light-bootstrap-dashboard.scss" />
+    <Content Include="sms\templates\dashboard.html" />
+    <Content Include="sms\templates\giveawayconfirmation.html" />
+    <Content Include="sms\templates\giveawayform.html" />
+    <Content Include="sms\templates\igauth.html" />
+    <Content Include="sms\templates\layout.html" />
+    <Content Include="sms\templates\login.html" />
+    <Content Include="sms\templates\profile.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <Interpreter Include="py27env\">
+      <Id>{2ef7528d-819d-46b9-a3fb-d252f7472b1f}</Id>
+      <BaseInterpreter>{9a7a9026-48c1-4688-9d5d-e5699d47d074}</BaseInterpreter>
+      <Version>2.7</Version>
+      <Description>py27env (Python 64-bit 2.7)</Description>
+      <InterpreterPath>Scripts\python.exe</InterpreterPath>
+      <WindowsInterpreterPath>Scripts\pythonw.exe</WindowsInterpreterPath>
+      <LibraryPath>Lib\</LibraryPath>
+      <PathEnvironmentVariable>PYTHONPATH</PathEnvironmentVariable>
+      <Architecture>Amd64</Architecture>
+    </Interpreter>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.Web.targets" />
+  <!-- Specify pre- and post-build commands in the BeforeBuild and 
+       AfterBuild targets below. -->
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <AutoAssignPort>True</AutoAssignPort>
+          <UseCustomServer>True</UseCustomServer>
+          <CustomServerUrl>http://localhost</CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}" User="">
+        <WebProjectProperties>
+          <StartPageUrl>
+          </StartPageUrl>
+          <StartAction>CurrentPage</StartAction>
+          <AspNetDebugging>True</AspNetDebugging>
+          <SilverlightDebugging>False</SilverlightDebugging>
+          <NativeDebugging>False</NativeDebugging>
+          <SQLDebugging>False</SQLDebugging>
+          <ExternalProgram>
+          </ExternalProgram>
+          <StartExternalURL>
+          </StartExternalURL>
+          <StartCmdLineArguments>
+          </StartCmdLineArguments>
+          <StartWorkingDirectory>
+          </StartWorkingDirectory>
+          <EnableENC>False</EnableENC>
+          <AlwaysStartWebServerOnDebug>False</AlwaysStartWebServerOnDebug>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

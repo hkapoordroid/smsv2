@@ -116,7 +116,7 @@ def ContestScheduler():
                 
             
 
-        #scan the active contests table and remove all contests which have completed.        
+        #TODO: scan the active contests table and remove all contests which have completed.        
 
 
     except:
