@@ -25,6 +25,20 @@
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
     <link href="../static/css/pe-icon-7-stroke.css" rel="stylesheet" />
 
+    <script language="javascript">
+
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    $('#gapic').attr('src', e.target.result).width(230).height(230);
+                };
+
+    reader.readAsDataURL(input.files[0]);
+    }
+    }
+    </script>
+
 </head>
 <body>
 

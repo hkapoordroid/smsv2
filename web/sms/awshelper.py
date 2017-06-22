@@ -7,12 +7,23 @@ import boto3
 import json
 import time
 import datetime
+import decimal
 
 BUCKETNAME = "isharemystyle"
 S3_BASEURL = "https://s3-us-west-1.amazonaws.com/isharemystyle/"
 
 ACCESS_KEY = 'AKIAISYC66Z4KPI2LEBQ'
 SECRET_ACCESS_KEY = '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' 
+
+
+class DecimalEncoder(json.JSONEncoder):
+    def default(self, o):
+        if isinstance(o, decimal.Decimal):
+            if o % 1 > 0:
+                return float(o)
+            else:
+                return int(o)
+        return super(DecimalEncoder, self).default(o)
 
 def upload_image_to_s3(sourcefile):
     '''
@@ -159,7 +170,7 @@ def save_ig_user_and_auth_data(email, data):
     except:
         raise
 
-def getUserContests(email):
+def get_user_contests(email):
     '''
         This method gets all contests for a given user
         input : email/username
@@ -209,33 +220,106 @@ def getUserContests(email):
                 contestValue[item['contestid']] = value
                 
                 if starttime <= datetime.datetime.now() and endtime >= datetime.datetime.now():
-                    contests['Active'] =  contestValue
-                elif startime > datetime.datetime.now():
-                    contests['Future'] =  contestValue
+                    if 'Active' not in contests:
+                        contests['Active'] = list()
+                    contests['Active'].append(contestValue)
+                elif starttime > datetime.datetime.now():
+                    if 'Future' not in contests:
+                        contests['Future'] = list()
+                    contests['Future'].append(contestValue)
                 elif endtime < datetime.datetime.now():
-                    contests['Past'] =  contestValue                               
+                    if 'Past' not in contests:
+                        contests['Past'] = list()
+                    contests['Past'].append(contestValue)                               
                 
         return contests        
 
     except:
         raise
 
+def add_contest(email, starttime, endttime, imageurl, title, type, description):
+    try:
+        #valid inputs
+        if not email:
+            raise ValueError("Email cannot be empty")
+
+        if not starttime:
+            raise ValueError("Start Time cannot be empty")
+
+        if not endttime:
+            raise ValueError("End Time cannot be empty")
+
+        if not imageurl:
+            raise ValueError("Image URL cannot be empty")
+
+        if not title:
+            raise ValueError("Title cannot be empty")
+
+        if not type:
+            raise ValueError("type cannot be empty")
+
+        if not description:
+            raise ValueError("Description cannot be empty")
+
+        #get the dynamodb resource
+        dyndb = boto3.resource('dynamodb', 
+                                aws_access_key_id = ACCESS_KEY,
+                                aws_secret_access_key = SECRET_ACCESS_KEY,
+                                region_name='us-west-1')
+
+        #get the UserContests Table
+        userContestsTable = dyndb.Table('UserContests')
+
+        #generate the item
+        item = dict()
+        item['email'] = email
+        item['starttime'] = starttime
+        item['endtime'] = endttime
+        item['contestid'] = str(uuid4())
+        item['imageurl'] = imageurl
+        item['title'] = title
+        item['type'] = type
+        item['description'] = description
+        item['status'] = 'Pending'
+
+        resp1 = userContestsTable.put_item(Item=item)
+
+        #get the contests Table
+        contestsTable = dyndb.Table('Contests')
+
+        print(json.dumps(resp1, indent=4, cls=DecimalEncoder))
+
+        item.pop('imageurl')
+        item.pop('title')
+        item.pop('description')
+        item.pop('type')        
+
+        resp2 = contestsTable.put_item(Item=item)
+
+        print(json.dumps(resp2, indent=4, cls=DecimalEncoder))
+        
+        
+
+    except:
+        raise
+
 
 def UnitTest():
-    contestsData = getUserContests('hkapoordroid@gmail.com')
+    contestsData = get_user_contests('hkapoordroid@gmail.com')
     print 'Got data'
     if contestsData:
         #lets get the active contests first
         if 'Active' in contestsData:
-            for ack, acv in contestsData['Active'].iteritems():
-                print ack
-                print acv['title']
-                #print(ac.keys)
-                #for k,v in acv.iteritems():
-                #acObj = ActiveContest(v['title'], v['description'], v['starttime'], 
-                #                        v['endttime'], k)
+            for i in contestsData['Active']:
+                for ack, acv in i.iteritems():
+                    print ack
+                    print acv['title']
+                    #print(ac.keys)
+                    #for k,v in acv.iteritems():
+                    #acObj = ActiveContest(v['title'], v['description'], v['starttime'], 
+                    #                        v['endttime'], k)
 
-                #activeContests.append(acObj)
+                    #activeContests.append(acObj)
     
     #print(check_if_login_exists('hkapoordroid@gmail.com'))
     #print(check_if_login_exists('test@test.com'))

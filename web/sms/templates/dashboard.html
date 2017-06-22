@@ -4,7 +4,7 @@
 {% block content %}
 
 <div class="row">
-    <div class="col-md-12">
+    <div class="col-md-6">
         <div class="card ">
             <div class="header">
                 <h4 class="title">Active Giveaway</h4>
@@ -12,12 +12,15 @@
             </div>
             <div class="content">
                 {% if activeContests %}
-                <div class="row">
+
+                {% for item in activeContests %}
+
+               <div class="row">
                     <div class="col-md-12">
                         <div class="table-responsive">
 
                             <table class="table table-bigboy">
-                                <thead>
+                                <!--<thead>
                                     <tr>
                                         <th class="text-center">Image</th>
                                         <th class="text-center">Title</th>
@@ -25,23 +28,16 @@
                                         <th class="text-center">EndTime</thclass="text-center">
                                         <th class="text-center">Stats</th>
                                     </tr>
-                                </thead>
+                                </thead>-->
                                 <tbody>
-                                    {% for item in activeContests %}
                                     <tr>
-                                        <td>
-                                            <div class="img-container">
-                                                <img src="{{ item.imageurl }}" alt="...">
-                                            </div>
-                                        </td>
-                                        <td class="td-name" style="text-align:center">
+                                        <td class="td-name" style="text-align:center" colspan="2">
                                             {{ item.title|safe }}
                                         </td>
-                                        <td class="td-number">
-                                            {{ item.starttime|safe }}
-                                        </td>
-                                        <td class="td-number">
-                                            {{ item.endtime|safe }}
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <img src="{{ item.imageurl }}" width="230" height="230" alt="...">
                                         </td>
                                         <td class="td-number">
                                             <table class="table table-bigboy">
@@ -67,45 +63,109 @@
                                             </table>
                                         </td>
                                     </tr>
-                                    {% endfor %}
-                                    <!--<tr>
-                                        <td>
-                                            <div class="img-container">
-                                                <img src="../static/img/blog-1.jpg" alt="...">
-                                            </div>
-                                        </td>
-                                        <td class="td-name">
-                                            10 Things that all designers do
-                                        </td>
-                                        <td>
-                                            Most beautiful agenda for the office, really nice paper and black cover. Most beautiful agenda for the office.
-                                        </td>
-                                        <td class="td-number">30/08/2015</td>
+                                    <tr>
                                         <td class="td-number">
-                                            1,225
+                                            Started: 
+                                            {{ item.starttime|safe }}
                                         </td>
-                                        <td class="td-actions">
-                                            <button type="button" rel="tooltip" data-placement="left" title="View Post" class="btn btn-info btn-simple btn-icon">
-                                                <i class="fa fa-image"></i>
-                                            </button>
-                                            <button type="button" rel="tooltip" data-placement="left" title="Edit Post" class="btn btn-success btn-simple btn-icon">
-                                                <i class="fa fa-edit"></i>
-                                            </button>
-                                            <button type="button" rel="tooltip" data-placement="left" title="Remove Post" class="btn btn-danger btn-simple btn-icon ">
-                                                <i class="fa fa-times"></i>
-                                            </button>
+                                        <td class="td-number">
+                                            Ended:
+                                            {{ item.endtime|safe }}
                                         </td>
-                                    </tr>-->
+                                    </tr>
                                 </tbody>
                             </table>
                         </div>
                     </div>
-                    <!--<div class="col-md-6 col-md-offset-1">
-                        <div id="worldMap" style="height: 300px;"></div>
-                    </div>-->
                 </div>
+                {% endfor %}
+
+
                 {% else %}
                 <h5>Looks like you don't have any active Giveaways! Please check past and upcoming Giveaways below. You can always set up one!</h5>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="card ">
+            <div class="header">
+                <h4 class="title">Upcoming Giveaways!</h4>
+                <!--<p class="category">Your currently active Giveaway</p>-->
+            </div>
+            <div class="content">
+                {% if futureContests %}
+
+                {% for item in futureContests %}
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="table-responsive">
+
+                            <table class="table table-bigboy">
+                                <!--<thead>
+                                    <tr>
+                                        <th class="text-center">Image</th>
+                                        <th class="text-center">Title</th>
+                                        <th class="text-center">StartTime</th>
+                                        <th class="text-center">EndTime</thclass="text-center">
+                                        <th class="text-center">Stats</th>
+                                    </tr>
+                                </thead>-->
+                                <tbody>
+                                    <tr>
+                                        <td class="td-name" style="text-align:center" colspan="2">
+                                            {{ item.title|safe }}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <img src="{{ item.imageurl }}" width="230" height="230" alt="...">
+                                        </td>
+                                        <td class="td-number">
+                                            <table class="table table-bigboy">
+                                                <thead>
+                                                    <tr>
+                                                        <th class="text-center">Likes</th>
+                                                        <th class="text-center">Comments</th>
+                                                        <th class="text-center">Followers Gained</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td class="text-center"><img src="../static/img/igheart.png" style="width:70px; height:70px" /></td>
+                                                        <td class="text-center"><img src="../static/img/igcomments.jpg" style="width:100px; height:100px" /></td>
+                                                        <td class="text-center"><img src="../static/img/igfollowers.png" style="width:100px; height:100px" /></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-center">{{ item.likes }}</td>
+                                                        <td class="text-center">{{ item.comments }}</td>
+                                                        <td class="text-center">{{ item.followersgained }}</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="td-number">
+                                            Started:
+                                            {{ item.starttime|safe }}
+                                        </td>
+                                        <td class="td-number">
+                                            Ended:
+                                            {{ item.endtime|safe }}
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+
+
+                {% else %}
+                <h5>Looks like you don't have any Giveaways coming Up! Please check past and Active Giveaways. You can always set up one!</h5>
                 {% endif %}
             </div>
         </div>
@@ -115,161 +175,61 @@
 
 <div class="row">
     <div class="col-md-12">
-        <div class="card ">
-            <div class="header">
-                <h4 class="title">Global Sales by Top Locations</h4>
-                <p class="category">All products that were shipped</p>
-            </div>
-            <div class="content">
-                <div class="row">
-                    <div class="col-md-5">
-                        <div class="table-responsive">
-                            <table class="table">
-                                <tbody>
-                                    <tr>
-                                        <td>
-                                            <div class="flag">
-                                                <img src="../assets/img/flags/US.png"
-                                            </div>
-                                        </td>
-                                        <td>USA</td>
-                                        <td class="text-right">
-                                            2.920
-                                        </td>
-                                        <td class="text-right">
-                                            53.23%
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="flag">
-                                                <img src="../assets/img/flags/DE.png"
-                                            </div>
-                                        </td>
-                                        <td>Germany</td>
-                                        <td class="text-right">
-                                            1.300
-                                        </td>
-                                        <td class="text-right">
-                                            20.43%
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="flag">
-                                                <img src="../assets/img/flags/AU.png"
-                                            </div>
-                                        </td>
-                                        <td>Australia</td>
-                                        <td class="text-right">
-                                            760
-                                        </td>
-                                        <td class="text-right">
-                                            10.35%
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="flag">
-                                                <img src="../assets/img/flags/GB.png"
-                                            </div>
-                                        </td>
-                                        <td>United Kingdom</td>
-                                        <td class="text-right">
-                                            690
-                                        </td>
-                                        <td class="text-right">
-                                            7.87%
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="flag">
-                                                <img src="../assets/img/flags/RO.png"
-                                            </div>
-                                        </td>
-                                        <td>Romania</td>
-                                        <td class="text-right">
-                                            600
-                                        </td>
-                                        <td class="text-right">
-                                            5.94%
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="flag">
-                                                <img src="../assets/img/flags/BR.png"
-                                            </div>
-                                        </td>
-                                        <td>Brasil</td>
-                                        <td class="text-right">
-                                            550
-                                        </td>
-                                        <td class="text-right">
-                                            4.34%
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-md-offset-1">
-                        <div id="worldMap" style="height: 300px;"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="row">
-    <div class="col-md-4">
         <div class="card">
-            <div class="header">
-                <h4 class="title">Email Statistics</h4>
-                <p class="category">Last Campaign Performance</p>
+            <div class="header text-center">
+                <h4 class="title">Past Giveaways!</h4>
+                <p class="category">your completed Giveaways!</p>
+                <br />
             </div>
-            <div class="content">
-                <div id="chartEmail" class="ct-chart "></div>
+            <div class="content table-responsive table-full-width">
+
+                {% if activeContests %}
+
+                <table class="table table-bigboy">
+                    <!--<thead>
+                        <tr>
+                            <th class="text-center">Thumb</th>
+                            <th>Blog Title</th>
+                            <th class="th-description">Description</th>
+                            <th class="text-right">Date</th>
+                            <th class="text-right">Views</th>
+                            <th></th>
+                        </tr>
+                    </thead>-->
+                    <tbody>
+
+                        {% for item in pastContests %}
+
+                        <tr>
+                            <td>
+                                <img src="{{ item.imageurl }}" width="120" height="120" alt="...">
+                            </td>
+                            <td class="td-name">
+                                {{ item.title|safe }}
+                            </td>
+                            <td class="text-center">
+                                <img src="../static/img/igheart.png" style="width:70px; height:70px" /><br />
+                                {{ item.likes }}
+                            </td>
+                            <td class="text-center">
+                                <img src="../static/img/igcomments.jpg" style="width:100px; height:100px" /><br />
+                                {{ item.comments }}
+                            </td>
+                            <td class="text-center">
+                                <img src="../static/img/igfollowers.png" style="width:100px; height:100px" /><br />
+                                {{ item.followersgained }}
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+                {% else %}
+                <h5>Looks like you don't have any past completed Giveaways! </h5>
+                {% endif %}
             </div>
-            <div class="footer">
-                <div class="legend">
-                    <i class="fa fa-circle text-info"></i> Open
-                    <i class="fa fa-circle text-danger"></i> Bounce
-                    <i class="fa fa-circle text-warning"></i> Unsubscribe
-                </div>
-                <hr>
-                <div class="stats">
-                    <i class="fa fa-clock-o"></i> Campaign sent 2 days ago
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-8">
-        <div class="card">
-            <div class="header">
-                <h4 class="title">Users Behavior</h4>
-                <p class="category">24 Hours performance</p>
-            </div>
-            <div class="content">
-                <div id="chartHours" class="ct-chart"></div>
-            </div>
-            <div class="footer">
-                <div class="legend">
-                    <i class="fa fa-circle text-info"></i> Open
-                    <i class="fa fa-circle text-danger"></i> Click
-                    <i class="fa fa-circle text-warning"></i> Click Second Time
-                </div>
-                <hr>
-                <div class="stats">
-                    <i class="fa fa-history"></i> Updated 3 minutes ago
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+        </div><!--  end card  -->
+    </div> <!-- end col-md-12 -->
+</div> <!-- end row -->
 
 
-
-                            {% endblock %}
+{% endblock %}

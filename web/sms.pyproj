@@ -7,7 +7,7 @@
     <ProjectGuid>1368dbad-5c28-484e-8185-edab40943230</ProjectGuid>
     <ProjectHome>.</ProjectHome>
     <ProjectTypeGuids>{789894c7-04a9-4a11-a6b5-3f4435165112};{1b580a1a-fdb3-4b32-83e1-6407eb2722e6};{349c5851-65df-11da-9384-00065b846f21};{888888a0-9f3d-457c-b088-3a5042f75d52}</ProjectTypeGuids>
-    <StartupFile>sms\awshelper.py</StartupFile>
+    <StartupFile>runserver.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -211,6 +211,9 @@
     <Content Include="sms\static\img\full-screen-image-2.jpg" />
     <Content Include="sms\static\img\full-screen-image-3.jpg" />
     <Content Include="sms\static\img\full-screen-image-4.jpg" />
+    <Content Include="sms\static\img\igcomments.jpg" />
+    <Content Include="sms\static\img\igfollowers.png" />
+    <Content Include="sms\static\img\igheart.png" />
     <Content Include="sms\static\img\loading-bubbles.svg" />
     <Content Include="sms\static\img\mask.png" />
     <Content Include="sms\static\img\new_logo.png" />
